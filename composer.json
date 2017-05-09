@@ -12,9 +12,10 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
+		"yidas/yii2-composer-bower-skip": "~2.0.0",
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
 		"yiisoft/yii2-swiftmailer": "~2.0.0",
@@ -60,7 +61,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "pistol88\\shop\\": ""
+            "pistol88\\shop\\": "common/modules/pistol88/yii2-shop"
         }
     }
 }
