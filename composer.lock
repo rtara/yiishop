@@ -158,19 +158,20 @@
         },
         {
             "name": "abeautifulsite/simpleimage",
-            "version": "2.5.6",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/claviska/SimpleImage.git",
-                "reference": "5be7b5c912b94b85b20e423b9b8bd4680ccaa53b"
+                "reference": "54a99d302355d22ee00d9842a8dbe101a52203d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/5be7b5c912b94b85b20e423b9b8bd4680ccaa53b",
-                "reference": "5be7b5c912b94b85b20e423b9b8bd4680ccaa53b",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/54a99d302355d22ee00d9842a8dbe101a52203d8",
+                "reference": "54a99d302355d22ee00d9842a8dbe101a52203d8",
                 "shasum": ""
             },
             "require": {
+                "ext-gd": "*",
                 "php": ">=5.3.0"
             },
             "type": "library",
@@ -202,7 +203,7 @@
                 }
             ],
             "description": "A PHP class that simplifies working with images",
-            "time": "2015-08-08T06:11:41+00:00"
+            "time": "2017-01-06T16:38:10+00:00"
         },
         {
             "name": "asofter/yii2-imperavi-redactor",
@@ -2659,12 +2660,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "1e06292d5d237a387c07e8d253c893cc557d4759"
+                "reference": "8498638370da258eb8ff4cd0abc837e3abfce236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/1e06292d5d237a387c07e8d253c893cc557d4759",
-                "reference": "1e06292d5d237a387c07e8d253c893cc557d4759",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/8498638370da258eb8ff4cd0abc837e3abfce236",
+                "reference": "8498638370da258eb8ff4cd0abc837e3abfce236",
                 "shasum": ""
             },
             "require": {
@@ -2751,7 +2752,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-05-08 22:33:32"
+            "time": "2017-05-09 14:31:13"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -3319,12 +3320,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "4c751251f4f66ada7bfb10a96993c664e479b626"
+                "reference": "ff29a179c673426c57dc5ccf7635c4ed6fd939db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/4c751251f4f66ada7bfb10a96993c664e479b626",
-                "reference": "4c751251f4f66ada7bfb10a96993c664e479b626",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/ff29a179c673426c57dc5ccf7635c4ed6fd939db",
+                "reference": "ff29a179c673426c57dc5ccf7635c4ed6fd939db",
                 "shasum": ""
             },
             "require": {
@@ -3361,7 +3362,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-05-04T14:38:58+00:00"
+            "time": "2017-05-09T13:46:42+00:00"
         },
         {
             "name": "guzzlehttp/psr7",

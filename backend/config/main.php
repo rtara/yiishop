@@ -11,7 +11,9 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -36,6 +38,14 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'fileStorage' => [
+            'class' => '\trntv\filekit\Storage',
+            'baseUrl' => '@storageUrl/source',
+            'filesystem'=> function() {
+                $adapter = new \League\Flysystem\Adapter\Local(dirname(dirname(__DIR__)).'/frontend/web/images/source');
+                return new League\Flysystem\Filesystem($adapter);
+            },
         ],
         /*
         'urlManager' => [
