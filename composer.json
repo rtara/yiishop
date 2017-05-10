@@ -18,6 +18,23 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0"
+        "2amigos/yii2-grid-view-library": "*",
+        "pistol88/yii2-gallery": "*",
+        "pistol88/yii2-tree": "*",
+        "pistol88/yii2-promocode": "*",
+        "pistol88/yii2-seo": "*",
+        "pistol88/yii2-filter": "*",
+        "pistol88/yii2-field": "*",
+        "kartik-v/yii2-grid": "*",
+        "pistol88/yii2-relations": "*",
+        "voskobovich/yii2-many-many-behavior": "^3.0",
+        "kartik-v/yii2-widget-select2": "*",
+        "asofter/yii2-imperavi-redactor": "dev-master@dev",
+        "zelenin/yii2-slug-behavior": "~1.5.1",
+        "kartik-v/yii2-export": "@dev",
+        "kartik-v/yii2-mpdf": "@dev",
+        "trntv/yii2-file-kit": "@stable",
+        "league/flysystem": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -38,5 +55,10 @@
     },
     "scripts": {
         "post-install-cmd": "php init --env=Development --overwrite=n"
+    },
+    "autoload": {
+        "psr-4": {
+            "pistol88\\shop\\": "common/modules/pistol88/yii2-shop"
+        }
     }
 }
