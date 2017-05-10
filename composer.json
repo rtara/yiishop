@@ -12,19 +12,12 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-<<<<<<< HEAD
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0"
-=======
-		"yidas/yii2-composer-bower-skip": "~2.0.0",
-        "yiisoft/yii2": "*",
-        "yiisoft/yii2-bootstrap": "*",
-		"yiisoft/yii2-swiftmailer": "~2.0.0",
->>>>>>> d7b679841511ac782f58df6728ce7b8cb93f42e3
         "2amigos/yii2-grid-view-library": "*",
         "pistol88/yii2-gallery": "*",
         "pistol88/yii2-tree": "*",
@@ -42,10 +35,6 @@
         "kartik-v/yii2-mpdf": "@dev",
         "trntv/yii2-file-kit": "@stable",
         "league/flysystem": "*"
-<<<<<<< HEAD
-=======
-        
->>>>>>> d7b679841511ac782f58df6728ce7b8cb93f42e3
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -62,17 +51,12 @@
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
-        },
-		"bootstrap": "pistol88\\shop\\Bootstrap"
+        }
     },
     "scripts": {
         "post-install-cmd": "php init --env=Development --overwrite=n"
     },
-<<<<<<< HEAD
     "autoload": {
-=======
-	"autoload": {
->>>>>>> d7b679841511ac782f58df6728ce7b8cb93f42e3
         "psr-4": {
             "pistol88\\shop\\": "common/modules/pistol88/yii2-shop"
         }
