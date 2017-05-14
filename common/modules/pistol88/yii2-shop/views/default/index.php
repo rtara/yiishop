@@ -4,8 +4,7 @@ use yii\helpers\Url;
 $this->title = 'Магазин';
 $this->params['breadcrumbs'][] = $this->title;
 
-\pistol88\client\assets\BackendAsset::register($this);
-
+\pistol88\shop\assets\BackendAsset::register($this);
 ?>
 <div class="model-index">
     <table class="table">
