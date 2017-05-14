@@ -65,6 +65,7 @@ class ProductController extends Controller
                     $type = PriceType::findOne($typeId);
                     $price = new $priceModel($price);
                     $price->type_id = $typeId;
+                    $price->code = $model->code;
                     $price->name = $type->name;
                     $price->sort = $type->sort;
                     $price->product_id = $model->id;
