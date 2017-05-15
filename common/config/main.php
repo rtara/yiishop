@@ -38,6 +38,7 @@ return [
         //..
     ],
 
+    //'name' => 'web6-store',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
             'fileStorage' => [

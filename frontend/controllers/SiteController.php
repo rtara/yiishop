@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -12,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use pistol88\shop\models\Product;
 
 /**
  * Site controller
@@ -72,7 +74,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $products = Product::find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
+        return $this->render('index',[
+           'products' => $products
+        ]);
     }
 
     /**
