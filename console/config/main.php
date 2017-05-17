@@ -18,6 +18,13 @@ return [
           ],
     ],
     'components' => [
+		'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+			'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
+        ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
         'log' => [
             'targets' => [
                 [
@@ -26,9 +33,13 @@ return [
                 ],
             ],
         ],
+
 		'session' => [ // for use session in console application
-            'class' => 'yii\web\Session'
-        ],
-    ],
+				'class' => 'yii\web\Session'
+		],
+    ],	 
     'params' => $params,
 ];
+
+
+return $config;
