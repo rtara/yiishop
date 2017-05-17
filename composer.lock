@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3378b54fd6bb220ed65c02eb2e88a3e1",
+    "content-hash": "17b73ee96bb9bfaaa1410c5cce5aff28",
     "packages": [
         {
             "name": "2amigos/yii2-dosamigos-asset-bundle",
@@ -473,52 +473,6 @@
             ]
         },
         {
-            "name": "bower-asset/eonasdan-bootstrap-datetimepicker",
-            "version": "4.17.47",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Eonasdan/bootstrap-datetimepicker.git",
-                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Eonasdan/bootstrap-datetimepicker/zipball/25c11d79e614bc6463a87c3dd9cbf8280422e006",
-                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.8.3",
-                "bower-asset/moment": ">=2.10.5"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "build/css/bootstrap-datetimepicker.min.css",
-                    "build/js/bootstrap-datetimepicker.min.js"
-                ],
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "node_modules",
-                    "bower_components",
-                    "test",
-                    "tests"
-                ],
-                "bower-asset-private": false
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "bootstrap3 datetimepicker",
-            "keywords": [
-                "bootstrap",
-                "datepicker",
-                "datetimepicker",
-                "moment",
-                "timepicker",
-                "twitter-bootstrap"
-            ]
-        },
-        {
             "name": "bower-asset/fancybox",
             "version": "v2.1.5",
             "source": {
@@ -728,49 +682,6 @@
             ]
         },
         {
-            "name": "bower-asset/moment",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/moment/moment.git",
-                "reference": "b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378",
-                "reference": "b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "moment.js",
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "benchmarks",
-                    "bower_components",
-                    "meteor",
-                    "node_modules",
-                    "scripts",
-                    "tasks",
-                    "test",
-                    "component.json",
-                    "composer.json",
-                    "CONTRIBUTING.md",
-                    "ender.js",
-                    "Gruntfile.js",
-                    "Moment.js.nuspec",
-                    "package.js",
-                    "package.json",
-                    "ISSUE_TEMPLATE.md",
-                    "typing-tests"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "time": "2017-03-21 22:54:37"
-        },
-        {
             "name": "bower-asset/punycode",
             "version": "v1.3.2",
             "source": {
@@ -919,6 +830,485 @@
                 "markdown-extra"
             ],
             "time": "2017-04-04 09:40:58"
+        },
+        {
+            "name": "dvizh/yii2-cart",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-cart.git",
+                "reference": "72756d6eb029feb24c63e1688279e970f8ded7a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-cart/zipball/72756d6eb029feb24c63e1688279e970f8ded7a8",
+                "reference": "72756d6eb029feb24c63e1688279e970f8ded7a8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dvizh\\cart\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\cart\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "yii2-cart it's a simple cart module to collect application models, that implement cart interface + widgets",
+            "homepage": "https://github.com/dvizh/",
+            "keywords": [
+                "application",
+                "cart",
+                "dvizh",
+                "module",
+                "shop",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-05-01 17:54:02"
+        },
+        {
+            "name": "dvizh/yii2-field",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-field.git",
+                "reference": "8db78116f5b2732da6487f62ff4f290d92b8b67b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-field/zipball/8db78116f5b2732da6487f62ff4f290d92b8b67b",
+                "reference": "8db78116f5b2732da6487f62ff4f290d92b8b67b",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-grid-view-library": "*",
+                "asofter/yii2-imperavi-redactor": "dev-master@dev",
+                "kartik-v/yii2-grid": "*",
+                "kartik-v/yii2-widget-select2": "*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*",
+                "zelenin/yii2-slug-behavior": "~1.5.1"
+            },
+            "require-dev": {
+                "yiisoft/yii2-debug": "*",
+                "yiisoft/yii2-gii": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dvizh\\field\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\field\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "yii2-field add fields to your model",
+            "homepage": "https://github.com/dvizh/yii2-field",
+            "keywords": [
+                "application",
+                "dvizh",
+                "fields",
+                "module",
+                "yii2"
+            ],
+            "time": "2017-04-28 11:28:11"
+        },
+        {
+            "name": "dvizh/yii2-filter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-filter.git",
+                "reference": "743ddd2e717bd594188d64025e7122d4afff219d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-filter/zipball/743ddd2e717bd594188d64025e7122d4afff219d",
+                "reference": "743ddd2e717bd594188d64025e7122d4afff219d",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-grid-view-library": "*",
+                "dvizh/yii2-gallery": "*",
+                "kartik-v/yii2-widget-select2": "*",
+                "php": ">=5.4.0",
+                "yii2mod/yii2-ion-slider": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*",
+                "zelenin/yii2-slug-behavior": "~1.5.1"
+            },
+            "require-dev": {
+                "yiisoft/yii2-debug": "*",
+                "yiisoft/yii2-gii": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dvizh\\filter\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\filter\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "yii2-filter add options and filters to your model",
+            "homepage": "https://github.com/dvizh/yii2-filter",
+            "keywords": [
+                "application",
+                "dvizh",
+                "filter",
+                "module",
+                "options",
+                "yii2"
+            ],
+            "time": "2017-04-28 11:27:22"
+        },
+        {
+            "name": "dvizh/yii2-gallery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-gallery.git",
+                "reference": "2f6c6479d7e21cdcd8b6a2c28017f6d722c28f72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-gallery/zipball/2f6c6479d7e21cdcd8b6a2c28017f6d722c28f72",
+                "reference": "2f6c6479d7e21cdcd8b6a2c28017f6d722c28f72",
+                "shasum": ""
+            },
+            "require": {
+                "abeautifulsite/simpleimage": "2.*",
+                "kartik-v/yii2-widget-fileinput": "*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\gallery\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "Модуль позволяет загружать виджетом картинки",
+            "homepage": "https://github.com/dvizh/yii2-gallery",
+            "keywords": [
+                "application",
+                "dvizh",
+                "images",
+                "yii2",
+                "yii2-images"
+            ],
+            "time": "2017-04-25 09:36:15"
+        },
+        {
+            "name": "dvizh/yii2-promocode",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-promocode.git",
+                "reference": "35c5bebbe601d193777dfdfe43cfb855fcd6f70c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-promocode/zipball/35c5bebbe601d193777dfdfe43cfb855fcd6f70c",
+                "reference": "35c5bebbe601d193777dfdfe43cfb855fcd6f70c",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-widget-datepicker": "@dev",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dvizh\\promocode\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\promocode\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "CRUD, widget and services to give discount to clients",
+            "homepage": "https://github.com/dvizh/yii2-promocode",
+            "keywords": [
+                "application",
+                "coupons",
+                "dvizh",
+                "promocodes",
+                "yii2",
+                "yii2-promocode"
+            ],
+            "time": "2017-04-25 09:32:53"
+        },
+        {
+            "name": "dvizh/yii2-relations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-relations.git",
+                "reference": "a09bedbc0855aee1968e7df00a56b4313d8e6ddd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-relations/zipball/a09bedbc0855aee1968e7df00a56b4313d8e6ddd",
+                "reference": "a09bedbc0855aee1968e7df00a56b4313d8e6ddd",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-widget-fileinput": "*",
+                "newerton/yii2-fancybox": "dev-master",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\relations\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "Модуль позволяет привязывать любые модели к любым моделям (пример - похожие товары и т.д.)",
+            "homepage": "https://github.com/dvizh/yii2-relations",
+            "keywords": [
+                "application",
+                "dvizh",
+                "images",
+                "relations",
+                "yii2",
+                "yii2-relations"
+            ],
+            "time": "2017-04-25 09:36:54"
+        },
+        {
+            "name": "dvizh/yii2-seo",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-seo.git",
+                "reference": "8c2931d753de689159ce415a70863af6a59a06c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-seo/zipball/8c2931d753de689159ce415a70863af6a59a06c4",
+                "reference": "8c2931d753de689159ce415a70863af6a59a06c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\seo\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol + Ivan Kartonka",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "Модуль позволяет привязывать SEO поля к моделям",
+            "homepage": "https://github.com/dvizh/yii2-seo",
+            "keywords": [
+                "application",
+                "dvizh",
+                "seo",
+                "yii2"
+            ],
+            "time": "2017-04-25 09:37:35"
+        },
+        {
+            "name": "dvizh/yii2-shop",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-shop.git",
+                "reference": "366b7dd536b8e39e7e2d756a9d9a0cbb6093cd4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-shop/zipball/366b7dd536b8e39e7e2d756a9d9a0cbb6093cd4d",
+                "reference": "366b7dd536b8e39e7e2d756a9d9a0cbb6093cd4d",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-grid-view-library": "*",
+                "asofter/yii2-imperavi-redactor": "dev-master@dev",
+                "dvizh/yii2-field": "*",
+                "dvizh/yii2-filter": "*",
+                "dvizh/yii2-gallery": "*",
+                "dvizh/yii2-promocode": "*",
+                "dvizh/yii2-relations": "*",
+                "dvizh/yii2-seo": "*",
+                "dvizh/yii2-tree": "*",
+                "kartik-v/yii2-export": "@dev",
+                "kartik-v/yii2-grid": "*",
+                "kartik-v/yii2-mpdf": "@dev",
+                "kartik-v/yii2-widget-select2": "*",
+                "league/flysystem": "*",
+                "php": ">=5.4.0",
+                "trntv/yii2-file-kit": "@stable",
+                "voskobovich/yii2-many-many-behavior": "^3.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*",
+                "zelenin/yii2-slug-behavior": "~1.5.1"
+            },
+            "require-dev": {
+                "yiisoft/yii2-debug": "*",
+                "yiisoft/yii2-gii": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dvizh\\shop\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\shop\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "yii2-shop it's a module for site shop backend",
+            "homepage": "https://github.com/dvizh/yii2-shop",
+            "keywords": [
+                "application",
+                "backend",
+                "crud",
+                "dvizh",
+                "module",
+                "shop",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-05-17 15:14:46"
+        },
+        {
+            "name": "dvizh/yii2-tree",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-tree.git",
+                "reference": "0f24ac078a114b8e2a2725703252d55208127556"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-tree/zipball/0f24ac078a114b8e2a2725703252d55208127556",
+                "reference": "0f24ac078a114b8e2a2725703252d55208127556",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\tree\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "it's a simple widget to build tree by model",
+            "homepage": "https://github.com/dvizh/yii2-tree",
+            "keywords": [
+                "tree",
+                "widget",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-04-27 11:21:45"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -1788,55 +2178,6 @@
             "time": "2017-03-29 03:56:27"
         },
         {
-            "name": "nex/yii2-datepicker",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/RomeroMsk/yii2-datepicker.git",
-                "reference": "041e89cbf5f593edd893fb3d50c412c16a5cd3cf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RomeroMsk/yii2-datepicker/zipball/041e89cbf5f593edd893fb3d50c412c16a5cd3cf",
-                "reference": "041e89cbf5f593edd893fb3d50c412c16a5cd3cf",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/eonasdan-bootstrap-datetimepicker": "4.17.*",
-                "bower-asset/moment": "*",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "nex\\datepicker\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Ovchinnikov",
-                    "email": "nex.software@gmail.com",
-                    "homepage": "https://github.com/RomeroMsk"
-                }
-            ],
-            "description": "Bootstrap 3 Date/time picker widget for Yii2",
-            "homepage": "https://github.com/RomeroMsk/yii2-datepicker",
-            "keywords": [
-                "DateTimePicker",
-                "bootstrap",
-                "datepicker",
-                "extension",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-05-10 05:03:42"
-        },
-        {
             "name": "phpoffice/phpexcel",
             "version": "1.8.x-dev",
             "source": {
@@ -1897,471 +2238,6 @@
                 "xlsx"
             ],
             "time": "2017-03-02 00:38:00"
-        },
-        {
-            "name": "pistol88/yii2-cart",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-cart.git",
-                "reference": "b0bed671bc897386154e4216f465d879a6bcb202"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-cart/zipball/b0bed671bc897386154e4216f465d879a6bcb202",
-                "reference": "b0bed671bc897386154e4216f465d879a6bcb202",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "pistol88\\cart\\Bootstrap"
-            },
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\cart\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "yii2-cart it's a simple cart module to collect application models, that implement cart interface + widgets",
-            "homepage": "https://github.com/pistol88/",
-            "keywords": [
-                "application",
-                "cart",
-                "module",
-                "pistol88",
-                "shop",
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2017-04-24 06:03:46"
-        },
-        {
-            "name": "pistol88/yii2-field",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-field.git",
-                "reference": "2005ee67eb4bc16c0174b15f037ed39d52093bd5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-field/zipball/2005ee67eb4bc16c0174b15f037ed39d52093bd5",
-                "reference": "2005ee67eb4bc16c0174b15f037ed39d52093bd5",
-                "shasum": ""
-            },
-            "require": {
-                "2amigos/yii2-grid-view-library": "*",
-                "kartik-v/yii2-grid": "*",
-                "kartik-v/yii2-widget-select2": "*",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "require-dev": {
-                "yiisoft/yii2-debug": "*",
-                "yiisoft/yii2-gii": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "pistol88\\field\\Bootstrap"
-            },
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\field\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "yii2-field add fields to your model",
-            "homepage": "https://github.com/pistol88/yii2-field",
-            "keywords": [
-                "application",
-                "fields",
-                "module",
-                "pistol88",
-                "yii2"
-            ],
-            "time": "2017-04-24 05:56:55"
-        },
-        {
-            "name": "pistol88/yii2-filter",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-filter.git",
-                "reference": "1b59bf053b08fa5a2cf59c6dfc46671bdfe88c84"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-filter/zipball/1b59bf053b08fa5a2cf59c6dfc46671bdfe88c84",
-                "reference": "1b59bf053b08fa5a2cf59c6dfc46671bdfe88c84",
-                "shasum": ""
-            },
-            "require": {
-                "2amigos/yii2-grid-view-library": "*",
-                "kartik-v/yii2-widget-select2": "*",
-                "php": ">=5.4.0",
-                "pistol88/yii2-gallery": "*",
-                "yii2mod/yii2-ion-slider": "*",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "require-dev": {
-                "yiisoft/yii2-debug": "*",
-                "yiisoft/yii2-gii": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "pistol88\\filter\\Bootstrap"
-            },
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\filter\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "yii2-filter add options and filters to your model",
-            "homepage": "https://github.com/pistol88/yii2-filter",
-            "keywords": [
-                "application",
-                "filter",
-                "module",
-                "options",
-                "pistol88",
-                "yii2"
-            ],
-            "time": "2017-04-24 05:57:30"
-        },
-        {
-            "name": "pistol88/yii2-gallery",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-gallery.git",
-                "reference": "53160cbdbac39dca5df5c7ca89022ff460beb980"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-gallery/zipball/53160cbdbac39dca5df5c7ca89022ff460beb980",
-                "reference": "53160cbdbac39dca5df5c7ca89022ff460beb980",
-                "shasum": ""
-            },
-            "require": {
-                "abeautifulsite/simpleimage": "2.*",
-                "kartik-v/yii2-widget-fileinput": "*",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\gallery\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "Модуль позволяет загружать виджетом картинки",
-            "homepage": "https://github.com/pistol88/yii2-gallery",
-            "keywords": [
-                "application",
-                "images",
-                "pistol88",
-                "yii2",
-                "yii2-images"
-            ],
-            "time": "2017-04-19 05:43:31"
-        },
-        {
-            "name": "pistol88/yii2-order",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-order.git",
-                "reference": "353cdc0ae0e839bcfe01e7c58929c84f41d08445"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-order/zipball/353cdc0ae0e839bcfe01e7c58929c84f41d08445",
-                "reference": "353cdc0ae0e839bcfe01e7c58929c84f41d08445",
-                "shasum": ""
-            },
-            "require": {
-                "2amigos/yii2-grid-view-library": "*",
-                "kartik-v/yii2-export": "@dev",
-                "kartik-v/yii2-grid": "*",
-                "kartik-v/yii2-mpdf": "dev-master",
-                "nex/yii2-datepicker": "*",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "require-dev": {
-                "yiisoft/yii2-debug": "*",
-                "yiisoft/yii2-gii": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "pistol88\\order\\Bootstrap"
-            },
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\order\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "yii2-order it's a module for site cart order",
-            "homepage": "https://github.com/pistol88/yii2-cart",
-            "keywords": [
-                "application",
-                "module",
-                "order",
-                "pistol88",
-                "shop",
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2017-04-29 10:02:46"
-        },
-        {
-            "name": "pistol88/yii2-promocode",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-promocode.git",
-                "reference": "ffb4f7ff524c52d0128a9a7095902437d50b0f86"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-promocode/zipball/ffb4f7ff524c52d0128a9a7095902437d50b0f86",
-                "reference": "ffb4f7ff524c52d0128a9a7095902437d50b0f86",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-widget-datepicker": "@dev",
-                "php": ">=5.4.0",
-                "pistol88/yii2-cart": "*",
-                "pistol88/yii2-order": "*",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "pistol88\\promocode\\Bootstrap"
-            },
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\promocode\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "Добавление функционала промокодов (купонов) на сайт, работает с pistol88/cart и pistol88/order",
-            "homepage": "https://github.com/pistol88/yii2-promocode",
-            "keywords": [
-                "application",
-                "coupons",
-                "pistol88",
-                "promocodes",
-                "yii2",
-                "yii2-promocode"
-            ],
-            "time": "2017-04-24 05:56:24"
-        },
-        {
-            "name": "pistol88/yii2-relations",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-relations.git",
-                "reference": "cc5e4591c2d91340488c80b451b39c480b4ba6b3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-relations/zipball/cc5e4591c2d91340488c80b451b39c480b4ba6b3",
-                "reference": "cc5e4591c2d91340488c80b451b39c480b4ba6b3",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-widget-fileinput": "*",
-                "newerton/yii2-fancybox": "dev-master",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\relations\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "Модуль позволяет привязывать любые модели к любым моделям (пример - похожие товары и т.д.)",
-            "homepage": "https://github.com/pistol88/yii2-relations",
-            "keywords": [
-                "application",
-                "images",
-                "pistol88",
-                "relations",
-                "yii2",
-                "yii2-relations"
-            ],
-            "time": "2017-04-11 09:34:53"
-        },
-        {
-            "name": "pistol88/yii2-seo",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-seo.git",
-                "reference": "9fd375d5a6e391869913de5c0d8afb13da796e9e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-seo/zipball/9fd375d5a6e391869913de5c0d8afb13da796e9e",
-                "reference": "9fd375d5a6e391869913de5c0d8afb13da796e9e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\seo\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol + Ivan Kartonka",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "Модуль позволяет привязывать SEO поля к моделям",
-            "homepage": "https://github.com/pistol88/yii2-seo",
-            "keywords": [
-                "application",
-                "pistol88",
-                "seo",
-                "yii2"
-            ],
-            "time": "2017-04-08 06:00:33"
-        },
-        {
-            "name": "pistol88/yii2-tree",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pistol88/yii2-tree.git",
-                "reference": "6e8b54eb35b20055278bce780c69c3c952f05657"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pistol88/yii2-tree/zipball/6e8b54eb35b20055278bce780c69c3c952f05657",
-                "reference": "6e8b54eb35b20055278bce780c69c3c952f05657",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "pistol88\\tree\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Pistol",
-                    "email": "pistol88@gmail.com"
-                }
-            ],
-            "description": "it's a simple widget to build tree by model",
-            "homepage": "https://github.com/pistol88/yii2-tree",
-            "keywords": [
-                "tree",
-                "widget",
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2016-10-08 10:37:47"
         },
         {
             "name": "setasign/fpdi",
@@ -2571,36 +2447,6 @@
                 "yii2"
             ],
             "time": "2016-07-27 21:24:35"
-        },
-        {
-            "name": "yidas/yii2-composer-bower-skip",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yidas/yii2-composer-bower-skip.git",
-                "reference": "f5d763fdf5555ce15ae94a5a89dda93777eb3877"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yidas/yii2-composer-bower-skip/zipball/f5d763fdf5555ce15ae94a5a89dda93777eb3877",
-                "reference": "f5d763fdf5555ce15ae94a5a89dda93777eb3877",
-                "shasum": ""
-            },
-            "provide": {
-                "bower-asset/bootstrap": "*",
-                "bower-asset/jquery": "*",
-                "bower-asset/jquery.inputmask": "*",
-                "bower-asset/punycode": "*",
-                "bower-asset/typeahead.js": "*",
-                "bower-asset/yii2-pjax": "*"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "A meta package that allows you to install yii2 without bower-asset (without composer-asset-plugin).",
-            "time": "2016-11-20T21:54:03+00:00"
         },
         {
             "name": "yii2mod/yii2-ion-slider",
@@ -3222,7 +3068,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2017-05-11T21:58:39+00:00"
+            "time": "2017-05-11 21:58:39"
         },
         {
             "name": "codeception/verify",
@@ -3362,7 +3208,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-05-15T16:09:28+00:00"
+            "time": "2017-05-15 16:09:28"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3661,12 +3507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "abe41cb27f4e4207c6f54a09272969fe55e0bbff"
+                "reference": "83a4e52aefb66e35c861c767da2e3e6abb9c0930"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/abe41cb27f4e4207c6f54a09272969fe55e0bbff",
-                "reference": "abe41cb27f4e4207c6f54a09272969fe55e0bbff",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/83a4e52aefb66e35c861c767da2e3e6abb9c0930",
+                "reference": "83a4e52aefb66e35c861c767da2e3e6abb9c0930",
                 "shasum": ""
             },
             "require": {
@@ -3716,7 +3562,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-03-03 17:09:02"
+            "time": "2017-05-17 11:25:27"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -4364,7 +4210,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-05-16T12:08:37+00:00"
+            "time": "2017-05-16 12:08:37"
         },
         {
             "name": "sebastian/environment",
@@ -4886,7 +4732,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-15T12:04:53+00:00"
+            "time": "2017-05-15 12:04:53"
         },
         {
             "name": "symfony/css-selector",
@@ -5277,7 +5123,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-15T12:04:53+00:00"
+            "time": "2017-05-15 12:04:53"
         },
         {
             "name": "webmozart/assert",
@@ -5474,7 +5320,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2017-05-10T07:09:36+00:00"
+            "time": "2017-05-10 07:09:36"
         }
     ],
     "aliases": [],

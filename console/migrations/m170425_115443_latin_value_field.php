@@ -2,11 +2,11 @@
 
 use yii\db\Migration;
 
-class m170419_110711_model_name_field extends Migration {
+class m170425_115443_latin_value_field extends Migration {
 
     public function safeUp() {
         try {
-            $this->addColumn('{{%field_value}}', 'model_name', $this->string(55));
+            $this->addColumn('{{%filter_variant}}', 'latin_value', $this->string(255));
         } catch (Exception $e) {
             echo 'Catch Exception ' . $e->getMessage() . ' ';
         }
@@ -14,7 +14,7 @@ class m170419_110711_model_name_field extends Migration {
 
     public function safeDown() {
         try {
-            $this->dropColumn('{{%field_value}}', 'model_name');
+            $this->dropColumn('{{%filter_variant}}', 'latin_value');
         } catch (Exception $e) {
             echo 'Catch Exception ' . $e->getMessage() . ' ';
         }

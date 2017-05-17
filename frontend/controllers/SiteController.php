@@ -13,7 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use pistol88\shop\models\Product;
+use dvizh\shop\models\Product;
 
 /**
  * Site controller
