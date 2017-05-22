@@ -18,7 +18,7 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
+           /* 'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -31,7 +31,7 @@ class SiteController extends Controller
                         'roles' => ['@'],
                     ],
                 ],
-            ],
+            ], */
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -76,6 +76,10 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+			$user=Yii::$app->user->identity;
+			$auth = \Yii::$app->authManager; 			
+			$authorRole = $auth->getRole($user->group);
+			$auth->assign($authorRole, $user->id);
             return $this->goBack();
         } else {
             return $this->render('login', [

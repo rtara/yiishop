@@ -4,6 +4,7 @@ namespace console\controllers;
 use Yii;
 use yii\console\Controller;
 use console\rbac\UserGroupRule;
+use console\rbac\UserProfileOwnerRule;
  
 class RbacController extends Controller
 {
