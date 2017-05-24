@@ -36,14 +36,16 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+				'posts' => 'post/index', 
+				'post/<id:\d+>' => 'post/view',
             ],
         ],
-        */
+        
         'view' => [
             'theme' => [
                 'pathMap' => [
