@@ -10,8 +10,29 @@
      public $css = [
          'css/bootstrap.css',
          'css/style.css',
+         'css/font-awesome.css',
+         'css/flexslider.css',
+         'css/jquery.countdown.css',
+         'css/fasthover.css',
+         'css/popuo-box.css',
+         'css/',
+
      ];
-     public $js = [];
+     public $js = [
+         'js/jquery.min.js',
+         'js/bootstrap-3.1.1.min.js',
+         //
+         'js/easyResponsiveTabs.js',
+         'js/imagezoom.js',
+         'js/jquery.countdown.js',
+         'js/jquery.flexisel.js',
+         'js/jquery.flexslider.js',
+         'js/jquery.magnific-popup.js',
+
+         'js/jquery.wmuSlider.js',
+         'js/minicart.js',
+         'js/script.js',
+     ];
      public $depends = [
          'yii\web\YiiAsset',
          'yii\bootstrap\BootstrapAsset',

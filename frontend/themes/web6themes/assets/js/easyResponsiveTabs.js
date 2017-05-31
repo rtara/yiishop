@@ -1,7 +1,7 @@
-// Easy Responsive Tabs Plugin
-// Author: Samson.Onna <Email : samson3d@gmail.com>
+
 (function ($) {
     $.fn.extend({
+
         easyResponsiveTabs: function (options) {
             //Set the default values, use comma to separate the settings, example:
             var defaults = {
@@ -37,6 +37,7 @@
                         $respTabs.find('.resp-tabs-list').css('display', 'none');
                     }
                 }
+
 
                 //Assigning the h2 markup
                 var $tabItemh2;
