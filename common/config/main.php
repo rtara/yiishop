@@ -11,5 +11,41 @@ return [
 			'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
         ],
     ],
+    'modules' => [
+        'shop' => [
+            'class' => 'dvizh\shop\Module',
+            'adminRoles' => [ ],/*trator', 'superadmin', 'admin'*/
+            //'defaultPriceType' => 1, //Цена по умолчанию]
+        ],
+        'filter' => [
+            'class' => 'dvizh\filter\Module',
+            'adminRoles' => ['administrator'],
+            'relationFieldName' => 'category_id',
+            'relationFieldValues' =>
+                function() {
+                    return \dvizh\shop\models\Category::buildTextTree();
+                },
+        ],
+        'field' => [
+            'class' => 'dvizh\field\Module',
+            'relationModels' => [
+                'dvizh\shop\models\Product' => 'Продукты',
+                'dvizh\shop\models\Category' => 'Категории',
+                'dvizh\shop\models\Producer' => 'Производители',
+            ],
+            'adminRoles' => ['administrator'],
+        ],
+        'relations' => [
+            'class' => 'dvizh\relations\Module',
+            'fields' => ['code'],
+        ],
+        'gallery' => [
+            'class' => 'dvizh\gallery\Module',
+            'imagesStorePath' => dirname(dirname(__DIR__)).'/storage/web/images/store',
+            'imagesCachePath' => dirname(dirname(__DIR__)).'/storage/web/images/cache',
+            'graphicsLibrary' => 'GD',
+            'placeHolderPath' => dirname(dirname(__DIR__)).'/storage/web/images/placeHolder.png',
+        ],
+    ],
 	
 ];

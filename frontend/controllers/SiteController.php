@@ -74,9 +74,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $elements = yii::$app->cart->elements;
         $products = Product::find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
         return $this->render('index',[
-           'products' => $products
+            'products' => $products,
+            'elements' => $elements,
         ]);
     }
 

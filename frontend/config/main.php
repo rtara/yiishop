@@ -50,7 +50,18 @@ return [
                     '@app/views' => '@frontend/themes/web6themes/view'
                 ]
             ]
-        ]
+        ],
+        'cart' => [
+            'class' => 'dvizh\cart\Cart',
+            'currency' => 'р.', //Валюта
+            'currencyPosition' => 'after', //after или before (позиция значка валюты относительно цены)
+            'priceFormat' => [2,'.', ''], //Форма цены
+        ],
     ],
-    'params' => $params,
+    'modules' => [
+        'cart' => [
+            'class' => 'dvizh\cart\Module',
+        ],
+        'params' => $params,
+    ],
 ];

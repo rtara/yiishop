@@ -10,6 +10,7 @@ use yii\widgets\Breadcrumbs;
 //use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use frontend\themes\web6themes\ThemesAsset;
+use dvizh\cart\widgets\CartInformer;
 
 ThemesAsset::register($this);
 ?>
@@ -39,6 +40,7 @@ ThemesAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Cart' , 'url' => ['/cart']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
