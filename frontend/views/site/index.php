@@ -4,6 +4,10 @@
 use yii\helpers\Html;
 $this->title = Yii::$app->name;
 ?>
+
+<!DOCTYPE html>
+
+
 <body>
     <div class="site-index">
 
