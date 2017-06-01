@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\widgets\LangWidgets;
 
 AppAsset::register($this);
 ?>
@@ -68,11 +69,12 @@ AppAsset::register($this);
     </div>
 </div>
 
+
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"><?= Yii::powered() ?> | <?= $this->render('\frontend\widgets\views\lang') ?></p>
     </div>
 </footer>
 

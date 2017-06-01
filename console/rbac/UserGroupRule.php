@@ -21,8 +21,8 @@ class UserGroupRule extends Rule
                 return $group == 'superadmin' || $group == 'administrator';
 			} elseif ($item->name === 'user') {
                 return $group == 'superadmin' || $group == 'user';
+			}
 		}        
 		return true;
-		} 
-	}
+	} 
 }

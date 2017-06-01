@@ -14,7 +14,7 @@ return [
     'modules' => [
 		'shop' => [
             'class' => 'dvizh\shop\Module',
-            'adminRoles' => [ ],/*trator', 'superadmin', 'admin'*/
+            'adminRoles' => ['superadmin', 'admin'],
             //'defaultPriceType' => 1, //Цена по умолчанию]
         ],
         'filter' => [
@@ -88,6 +88,10 @@ return [
                 return new League\Flysystem\Filesystem($adapter);
             },
         ],
+		'authManager' => [
+			'class' => 'yii\rbac\PhpManager',
+			'defaultRoles' => ['admin', 'superadmin','administrator','user'], // your define roles
+		], 
     ],
     'params' => $params,
 ];

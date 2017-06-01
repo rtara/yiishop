@@ -8,12 +8,15 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+	'language'=>'uk-UK',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+	
         'request' => [
             'csrfParam' => '_csrf-frontend',
+			'class' => 'frontend\components\LangRequest'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -36,14 +39,30 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
+        
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+			'class'=>'frontend\components\LangUrlManager',
             'rules' => [
+				'/' => 'site/index', 
+				//'<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
             ],
-        ],
-        */
+        ],*/
+        
+		'i18n' => [
+			'translations' => [
+				'*' => [
+					'class' => 'yii\i18n\PhpMessageSource',
+					'basePath' => '@frontend/messages',
+					'sourceLanguage' => 'uk',
+					'fileMap' => [
+						//'main' => 'main.php',
+					],
+				],
+			],
+		],
+		
         'view' => [
             'theme' => [
                 'pathMap' => [
