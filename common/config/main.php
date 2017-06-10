@@ -14,7 +14,7 @@ return [
     'modules' => [
         'shop' => [
             'class' => 'dvizh\shop\Module',
-            'adminRoles' => [ ],/*trator', 'superadmin', 'admin'*/
+            'adminRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
             //'defaultPriceType' => 1, //Цена по умолчанию]
         ],
         'filter' => [

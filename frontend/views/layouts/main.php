@@ -39,6 +39,7 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Cart', 'url' => ['/cart/default']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -74,7 +75,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?> | <?= $this->render('\frontend\widgets\views\lang') ?></p>
+<!--        <p class="pull-right">--><?//= Yii::powered() ?><!-- | --><?//= $this->render('\frontend\widgets\views\lang') ?><!--</p>-->
     </div>
 </footer>
 

@@ -14,6 +14,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use dvizh\shop\models\Product;
+use dvizh\shop\models\category\CategorySearch;
+use dvizh\shop\models\Category;
 
 /**
  * Site controller
@@ -76,10 +78,7 @@ class SiteController extends Controller
     {
         $elements = yii::$app->cart->elements;
         $products = Product::find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
-        return $this->render('index',[
-            'products' => $products,
-            'elements' => $elements,
-        ]);
+        return $this->render('index', compact( 'elements', 'products'));
     }
 
     /**
