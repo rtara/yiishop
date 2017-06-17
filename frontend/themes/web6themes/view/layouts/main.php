@@ -13,6 +13,7 @@ use dvizh\cart\widgets\CartInformer;
 use frontend\themes\web6themes\view\layouts\footer;
 use dvizh\shop\models\Category;
 use frontend\components\widgets\MyNav;
+use frontend\components\widgets\AdvDropdown;
 
 
 ThemesAsset::register($this);
@@ -168,48 +169,10 @@ NavBar::begin([
 <?php $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']]; ?>
 <?php
 $categories = Category::find()->indexBy('id')->asArray()->all();
-$tree = getTree($categories);
-
-function getTree($categories) {
-$tree = [];
-foreach ($categories as $id=>&$node) {
-    if (!$node['parent_id']) {
-        $tree[$id] = &$node;
-    } else {
-        $categories[$node['parent_id']]['childs'][$node['id']] = &$node;
-    }
-}
-return $tree;
-}
-?>
-<?php
-function buildItems ($tree)
-{
-$menuItems = [];
-foreach ($tree as $category) {
-    if ($category['childs']) {
-        array_push($menuItems, [
-            'label' => $category['name'],
-            'items' => buildItems($category['childs']),
-            'options' => [
-                'class' => ''
-            ]
-        ]);
-    } else {
-        array_push($menuItems, [
-            'label' => $category['name'],
-            'url' => '#',
-            'options' => [
-                'class' => ''
-            ],
-        ]);
-    }
-}
-return $menuItems;
-}
+$categoryItems = AdvDropdown::run($categories);
 
 ?>
-<?php $menuItems[] = ['label' => 'Products', 'items' => buildItems($tree),]; ?>
+<?php $menuItems[] = ['label' => 'Products', 'items' => $categoryItems]; ?>
 <?php $menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']]; ?>
 
 
