@@ -10,10 +10,8 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\ThemesAsset;
 use common\widgets\Alert;
 use dvizh\cart\widgets\CartInformer;
-use frontend\themes\web6themes\view\layouts\footer;
 use dvizh\shop\models\Category;
-use frontend\components\widgets\MyNav;
-use frontend\components\widgets\AdvDropdown;
+use frontend\components\widgets\CategoryDropdown;
 
 
 ThemesAsset::register($this);
@@ -164,19 +162,11 @@ NavBar::begin([
         'class' => 'navbar-default',
     ],
 ]);
-?>
 
-<?php $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']]; ?>
-<?php
-$categories = Category::find()->indexBy('id')->asArray()->all();
-$categoryItems = AdvDropdown::run($categories);
+$menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+$menuItems[] = ['label' => 'Products', 'items' => CategoryDropdown::run()];
+$menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']];
 
-?>
-<?php $menuItems[] = ['label' => 'Products', 'items' => $categoryItems]; ?>
-<?php $menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']]; ?>
-
-
-<?php
 if (Yii::$app->user->isGuest) {
     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

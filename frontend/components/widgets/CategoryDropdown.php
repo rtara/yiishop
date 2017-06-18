@@ -7,8 +7,10 @@
  */
 
 namespace frontend\components\widgets;
+use dvizh\shop\models\Category;
+use yii\helpers\Url;
 
-class AdvDropdown
+class CategoryDropdown
 {
     public static function getTree($categories) {
         $tree = [];
@@ -22,7 +24,7 @@ class AdvDropdown
         return $tree;
     }
 
-    
+
     public static function buildItems ($tree)
     {
         $menuItems = [];
@@ -30,27 +32,22 @@ class AdvDropdown
             if ($category['childs']) {
                 array_push($menuItems, [
                     'label' => $category['name'],
-                    'items' => AdvDropdown::buildItems($category['childs']),
-                    'options' => [
-                        'class' => ''
-                    ]
+//                    'url' => Url::to('category/index', ['id' => $category['id']]),
+                    'items' => CategoryDropdown::buildItems($category['childs']),
                 ]);
             } else {
                 array_push($menuItems, [
                     'label' => $category['name'],
-                    'url' => '#',
-                    'options' => [
-                        'class' => ''
-                    ],
+                    'url' => Url::toRoute(['category/index', 'id' => $category['id']]),
                 ]);
             }
         }
         return $menuItems;
     }
 
-    public function run($categories)
+    public static function run()
     {
-        $tree = static::getTree($categories);
+        $tree = static::getTree(Category::find()->indexBy('id')->asArray()->all());
         $items = static::buildItems($tree);
         return $items;
     }
