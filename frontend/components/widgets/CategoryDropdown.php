@@ -47,6 +47,7 @@ class CategoryDropdown
         return $menuItems;
     }
 
+
     public static function run()
     {
         //get cache
