@@ -46,6 +46,9 @@ return [
             'graphicsLibrary' => 'GD',
             'placeHolderPath' => dirname(dirname(__DIR__)).'/storage/web/images/placeHolder.png',
         ],
+        'utility' => [
+            'class' => 'c006\utility\migration\Module',
+        ],
     ],
 	
 ];

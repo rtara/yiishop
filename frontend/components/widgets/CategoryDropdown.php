@@ -9,6 +9,7 @@
 namespace frontend\components\widgets;
 use dvizh\shop\models\Category;
 use yii\helpers\Url;
+use Yii;
 
 class CategoryDropdown
 {
@@ -38,7 +39,8 @@ class CategoryDropdown
             } else {
                 array_push($menuItems, [
                     'label' => $category['name'],
-                    'url' => Url::toRoute(['category/index', 'id' => $category['id']]),
+//                    'url' => Url::toRoute(['category/index', 'id' => $category['id']]),
+                    'url' => Url::to(['category/index', 'id' => $category['id']]),
                 ]);
             }
         }
@@ -47,8 +49,13 @@ class CategoryDropdown
 
     public static function run()
     {
+        //get cache
+        $catDropdownItems = Yii::$app->cache->get('catDropdownItems');
+        if ($catDropdownItems) return $catDropdownItems;
         $tree = static::getTree(Category::find()->indexBy('id')->asArray()->all());
         $items = static::buildItems($tree);
+        //set cache
+        Yii::$app->cache->set('catDropdownItems', $items, 60);
         return $items;
     }
 }

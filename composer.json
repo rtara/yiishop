@@ -36,7 +36,8 @@
         "trntv/yii2-file-kit": "@stable",
         "league/flysystem": "*",
         "dvizh/yii2-shop": "*",
-        "dvizh/yii2-cart": "*"
+        "dvizh/yii2-cart": "*",
+        "c006/yii2-migration-utility": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
