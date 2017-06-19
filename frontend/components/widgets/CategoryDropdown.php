@@ -40,7 +40,7 @@ class CategoryDropdown
                 array_push($menuItems, [
                     'label' => $category['name'],
 //                    'url' => Url::toRoute(['category/index', 'id' => $category['id']]),
-                    'url' => Url::to(['category/index', 'id' => $category['id']]),
+                    'url' => Url::to(['category/view', 'id' => $category['id']]),
                 ]);
             }
         }
@@ -50,8 +50,8 @@ class CategoryDropdown
     public static function run()
     {
         //get cache
-        $catDropdownItems = Yii::$app->cache->get('catDropdownItems');
-        if ($catDropdownItems) return $catDropdownItems;
+//        $catDropdownItems = Yii::$app->cache->get('catDropdownItems');
+//        if ($catDropdownItems) return $catDropdownItems;
         $tree = static::getTree(Category::find()->indexBy('id')->asArray()->all());
         $items = static::buildItems($tree);
         //set cache

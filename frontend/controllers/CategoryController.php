@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use dvizh\shop\models\Product;
 use Yii;
 use dvizh\shop\models\Category;
 use dvizh\shop\models\category\CategorySearch;
@@ -36,47 +37,21 @@ class CategoryController extends Controller
 
     public function actionIndex()
     {
-        $searchModel = new CategorySearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//        $id = Yii::$app->request->get('id');
+//
+//        $searchModel = new CategorySearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+//        return $this->render('index', compact('searchModel', 'dataProvider', 'id'));
+        return $this->render('index');
     }
 
-//    public function actionCreate()
-//    {
-//        $model = new Category;
-//
-//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['update', 'id' => $model->id]);
-//        } else {
-//            return $this->render('create', [
-//                'model' => $model,
-//            ]);
-//        }
-//    }
-//
-//    public function actionUpdate($id)
-//    {
-//        $model = $this->findModel($id);
-//
-//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['update', 'id' => $model->id]);
-//        } else {
-//            return $this->render('update', [
-//                'model' => $model,
-//            ]);
-//        }
-//    }
-//
-//    public function actionDelete($id)
-//    {
-//        $this->findModel($id)->delete();
-//
-//        return $this->redirect(['index']);
-//    }
+    public function actionView($id)
+    {
+        $id = Yii::$app->request->get('id');
+        $products = Product::Find()->where(['category_id' => $id])->all();
+        return $this->render('view', compact('products', 'id'));
+    }
 
     protected function findModel($id)
     {

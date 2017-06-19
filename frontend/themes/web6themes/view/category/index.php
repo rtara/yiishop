@@ -1,10 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Iterl
- * Date: 18.06.2017
- * Time: 20:10
- */
+
+use frontend\components\widgets\CategoryDropdown;
+use yii\bootstrap\Nav;
+
 ?>
 
 <!--<div class="body-content">-->
@@ -42,4 +40,13 @@
 <!--</div>-->
 <!--</div>-->
 
-category/index
+<?php
+
+echo Nav::widget([
+    'options' => ['class' => 'navbar-nav'],
+    'items' => CategoryDropdown::run(),
+    'dropdownClass' => 'frontend\components\widgets\MyDropdown',
+]);
+
+
+?>
