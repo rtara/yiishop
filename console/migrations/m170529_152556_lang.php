@@ -22,8 +22,8 @@ class m170529_152556_lang extends Migration
 		], $tableOptions);
 
 		$this->batchInsert('lang', ['url', 'local', 'name', 'default', 'date_update', 'date_create'], [
-			['en', 'en-EN', 'English', 0, time(), time()],
-			['uk', 'uk-UK', 'Українська', 1, time(), time()],
+			['en', 'en-EN', 'English', 1, time(), time()],
+			['uk', 'uk-UK', 'Українська', 0, time(), time()],
 			['ru', 'ru-RU', 'Русский', 0, time(), time()],
 		]);
 	}
