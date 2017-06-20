@@ -1187,6 +1187,7 @@ use dvizh\shop\models\Category;
             </ul>
         </div>
     </div>
+</div>
     <!-- //top-brands -->
     <!-- newsletter -->
     <div class="newsletter">

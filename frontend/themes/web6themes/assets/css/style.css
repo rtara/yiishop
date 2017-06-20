@@ -39,7 +39,7 @@ input[type="submit"],.panel-body ul li a,.checkout-right-basket a,.additional_in
 }
 .w3l_logo{
 	float:left;
-	margin-left:22em;
+	margin-left:13em;
 }
 .w3l_logo h1 a{
 	font-size:1.1em;
@@ -4994,4 +4994,10 @@ td.invert-image a img {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #ff5063;
+}
+
+#google_translate_element {
+    float: left;
+    margin-left: 1em;
+    padding-top: 1em;
 }

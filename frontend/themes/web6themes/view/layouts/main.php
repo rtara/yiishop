@@ -118,37 +118,38 @@ ThemesAsset::register($this);
 <!-- header -->
     <div class="header" id="home1">
            <div class="container">
-               <div class="w3l_login">
-                   <a href="#" data-toggle="modal" data-target="#myModal88">
-                       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                   </a>
-               </div>
-               <div class="w3l_logo">
-                   <h1>
-                       <a href="index.html">Electronic Store<span>Your stores. Your place.</span>
+                   <div class="w3l_login">
+                       <a href="#" data-toggle="modal" data-target="#myModal88">
+                           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                        </a>
-                   </h1>
-               </div>
-               <div class="search">
-                   <input class="search_box" type="checkbox" id="search_box">
-                   <label class="icon-search" for="search_box">
-                       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                   </label>
-                   <div class="search_form">
-                       <form action="#" method="post">
-                           <input type="text" name="Search" placeholder="Search...">
-                           <input type="submit" value="Send">
-                       </form>
                    </div>
-               </div>
-               
-			   <div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-			   
-			   <div class="cart cart box_1">
+                   <div id="google_translate_element">
+                       <script type="text/javascript">
+                           function googleTranslateElementInit() {
+                               new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                           }
+                       </script>
+                       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                   </div>
+                   <div class="w3l_logo">
+                       <h1>
+                           <a href="index.html">Electronic Store<span>Your stores. Your place.</span>
+                           </a>
+                       </h1>
+                   </div>
+                   <div class="search">
+                       <input class="search_box" type="checkbox" id="search_box">
+                       <label class="icon-search" for="search_box">
+                           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                       </label>
+                       <div class="search_form">
+                           <form action="#" method="post">
+                               <input type="text" name="Search" placeholder="Search...">
+                               <input type="submit" value="Send">
+                           </form>
+                       </div>
+                   </div>
+                   <div class="cart cart box_1">
                    <form action="#" method="post" class="last">
                        <input type="hidden" name="cmd" value="_cart" />
                        <input type="hidden" name="display" value="1" />
@@ -156,62 +157,63 @@ function googleTranslateElementInit() {
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                        </button>
                    </form>
-               </div>
+                   </div>
            </div>
        </div>
 <!-- //header -->
 <!-- navigation -->
     <div class="navigation">
            <div class="container">
-<?php
-NavBar::begin([
-    'options' => [
-        'class' => 'navbar-default',
-    ],
-]);
+                <?php
+                NavBar::begin([
+                    'options' => [
+                        'class' => 'navbar-default',
+                    ],
+                ]);
 
-$menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
-$menuItems[] = ['label' => 'Products', 'items' => CategoryDropdown::run()];
-$menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']];
+                $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+                $menuItems[] = ['label' => 'Products', 'items' => CategoryDropdown::run()];
+                $menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']];
 
-if (Yii::$app->user->isGuest) {
-    $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-} else {
-    $menuItems[] = '<li>'
-        . Html::beginForm(['/site/logout'], 'post')
-        . Html::submitButton(
-            'Logout (' . Yii::$app->user->identity->username . ')',
-            ['class' => 'btn btn-link logout']
-        )
-        . Html::endForm()
-        . '</li>';
-}
-echo Nav::widget([
-    'options' => ['class' => 'navbar-nav'],
-    'items' => $menuItems,
-    'dropdownClass' => 'frontend\components\widgets\MyDropdown',
-]);
-NavBar::end();
-?>
+                if (Yii::$app->user->isGuest) {
+                    $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+                    $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                } else {
+                    $menuItems[] = '<li>'
+                        . Html::beginForm(['/site/logout'], 'post')
+                        . Html::submitButton(
+                            'Logout (' . Yii::$app->user->identity->username . ')',
+                            ['class' => 'btn btn-link logout']
+                        )
+                        . Html::endForm()
+                        . '</li>';
+                }
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav'],
+                    'items' => $menuItems,
+                    'dropdownClass' => 'frontend\components\widgets\MyDropdown',
+                ]);
+                NavBar::end();
+                ?>
+           </div>
     </div>
 <!-- //top-brands -->
 <!-- newsletter -->
-    <div class="newsletter">
-    <div class="container">
-        <div class="col-md-6 w3agile_newsletter_left">
-            <h3>Newsletter</h3>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
-</div>
-<div class="col-md-6 w3agile_newsletter_right">
-            <form action="#" method="post">
-                <input type="email" name="Email" placeholder="Email" required="">
-                <input type="submit" value="" />
-            </form>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-</div>
+<!--    <div class="newsletter">-->
+<!--    <div class="container">-->
+<!--        <div class="col-md-6 w3agile_newsletter_left">-->
+<!--            <h3>Newsletter</h3>-->
+<!--            <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>-->
+<!--</div>-->
+<!--<div class="col-md-6 w3agile_newsletter_right">-->
+<!--            <form action="#" method="post">-->
+<!--                <input type="email" name="Email" placeholder="Email" required="">-->
+<!--                <input type="submit" value="" />-->
+<!--            </form>-->
+<!--        </div>-->
+<!--        <div class="clearfix"> </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!-- //newsletter -->
 
     <?= $content ?>
