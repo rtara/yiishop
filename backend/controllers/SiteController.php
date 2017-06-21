@@ -59,8 +59,10 @@ class SiteController extends Controller
      * @return string
      */
     public function actionIndex()
+
     {
-        return $this->render('index');
+        $model = new LoginForm();
+        return $this->render('index',compact('model'));
     }
 
     /**

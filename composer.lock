@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b8bd8858c0abee0a754b22b0e4bb34c",
+    "content-hash": "17b73ee96bb9bfaaa1410c5cce5aff28",
     "packages": [
         {
             "name": "2amigos/yii2-dosamigos-asset-bundle",
@@ -770,45 +770,6 @@
             "license": [
                 "MIT"
             ]
-        },
-        {
-            "name": "c006/yii2-migration-utility",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/c006/yii2-migration-utility.git",
-                "reference": "b6c020d042aac83b31bc1860ba419227a893fa7f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/c006/yii2-migration-utility/zipball/b6c020d042aac83b31bc1860ba419227a893fa7f",
-                "reference": "b6c020d042aac83b31bc1860ba419227a893fa7f",
-                "shasum": ""
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "c006\\utility\\migration\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jon Chambers",
-                    "email": "jchambers.dev@gmail.com"
-                }
-            ],
-            "description": "Automatically writes the create tables for migrations or create tables in general",
-            "keywords": [
-                "extension",
-                "migration",
-                "tables",
-                "yii2"
-            ],
-            "time": "2017-04-24 16:35:05"
         },
         {
             "name": "cebe/markdown",
@@ -1936,12 +1897,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-fileinput.git",
-                "reference": "6b9c344c41df5d5c305589770893e14628e6eacc"
+                "reference": "55d8ff4c589b701ef40f3fb8db17fcfea2577615"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-fileinput/zipball/6b9c344c41df5d5c305589770893e14628e6eacc",
-                "reference": "6b9c344c41df5d5c305589770893e14628e6eacc",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-fileinput/zipball/55d8ff4c589b701ef40f3fb8db17fcfea2577615",
+                "reference": "55d8ff4c589b701ef40f3fb8db17fcfea2577615",
                 "shasum": ""
             },
             "require": {
@@ -1983,7 +1944,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2017-04-15 05:25:51"
+            "time": "2017-05-18 00:19:20"
         },
         {
             "name": "kartik-v/yii2-widget-select2",
@@ -4205,24 +4166,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "86ba64b90d6da250a75a734bf22db25232b7304c"
+                "reference": "4e0c886111db532a145d32301ba3f9ee9c94df4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/86ba64b90d6da250a75a734bf22db25232b7304c",
-                "reference": "86ba64b90d6da250a75a734bf22db25232b7304c",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/4e0c886111db532a145d32301ba3f9ee9c94df4c",
+                "reference": "4e0c886111db532a145d32301ba3f9ee9c94df4c",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3 || ^7.0"
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+                "phpunit/phpunit": "^6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -4249,7 +4210,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-05-16 12:08:37"
+            "time": "2017-05-19T04:13:16+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -4654,21 +4615,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "06252eaac2e74fdd66340ad890fc836131a55765"
+                "reference": "7f7b135eae17b550e1537b8206aa24dee6bf18e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/06252eaac2e74fdd66340ad890fc836131a55765",
-                "reference": "06252eaac2e74fdd66340ad890fc836131a55765",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/7f7b135eae17b550e1537b8206aa24dee6bf18e8",
+                "reference": "7f7b135eae17b550e1537b8206aa24dee6bf18e8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
-                "symfony/dom-crawler": "~2.8|~3.0"
+                "symfony/dom-crawler": "~2.8|~3.0|~4.0.0"
             },
             "require-dev": {
-                "symfony/css-selector": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
+                "symfony/css-selector": "~2.8|~3.0|~4.0.0",
+                "symfony/process": "~2.8|~3.0|~4.0.0"
             },
             "suggest": {
                 "symfony/process": ""
@@ -4703,7 +4664,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-18T12:56:12+00:00"
         },
         {
             "name": "symfony/console",
@@ -4711,17 +4672,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "75e7b3e66a7cbab46706a8aa85e85e5e97607740"
+                "reference": "4dd3bd4bd9600351ed88c1c9b61cc6416d11e421"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/75e7b3e66a7cbab46706a8aa85e85e5e97607740",
-                "reference": "75e7b3e66a7cbab46706a8aa85e85e5e97607740",
+                "url": "https://api.github.com/repos/symfony/console/zipball/4dd3bd4bd9600351ed88c1c9b61cc6416d11e421",
+                "reference": "4dd3bd4bd9600351ed88c1c9b61cc6416d11e421",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
-                "symfony/debug": "~2.8|~3.0",
+                "symfony/debug": "~2.8|~3.0|~4.0.0",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
@@ -4729,11 +4690,11 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/dependency-injection": "~3.3",
-                "symfony/event-dispatcher": "~2.8|~3.0",
-                "symfony/filesystem": "~2.8|~3.0",
-                "symfony/http-kernel": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
+                "symfony/dependency-injection": "~3.3|~4.0.0",
+                "symfony/event-dispatcher": "~2.8|~3.0|~4.0.0",
+                "symfony/filesystem": "~2.8|~3.0|~4.0.0",
+                "symfony/http-kernel": "~2.8|~3.0|~4.0.0",
+                "symfony/process": "~2.8|~3.0|~4.0.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -4771,7 +4732,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-18T12:56:12+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -4832,12 +4793,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "627c397b80c4dbe2411a2269fe4b57f476d98dfa"
+                "reference": "91dc1c81293808405273eedb3e187986407b6ca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/627c397b80c4dbe2411a2269fe4b57f476d98dfa",
-                "reference": "627c397b80c4dbe2411a2269fe4b57f476d98dfa",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/91dc1c81293808405273eedb3e187986407b6ca0",
+                "reference": "91dc1c81293808405273eedb3e187986407b6ca0",
                 "shasum": ""
             },
             "require": {
@@ -4848,7 +4809,7 @@
                 "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
             },
             "require-dev": {
-                "symfony/http-kernel": "~2.8|~3.0"
+                "symfony/http-kernel": "~2.8|~3.0|~4.0.0"
             },
             "type": "library",
             "extra": {
@@ -4880,7 +4841,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-18T12:56:12+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -4888,12 +4849,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "bd3feb40b31fff0f36a54c89363b4f5bee25f86e"
+                "reference": "df4150f20498e43730024a651578c8879486bea6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/bd3feb40b31fff0f36a54c89363b4f5bee25f86e",
-                "reference": "bd3feb40b31fff0f36a54c89363b4f5bee25f86e",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/df4150f20498e43730024a651578c8879486bea6",
+                "reference": "df4150f20498e43730024a651578c8879486bea6",
                 "shasum": ""
             },
             "require": {
@@ -4901,7 +4862,7 @@
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
-                "symfony/css-selector": "~2.8|~3.0"
+                "symfony/css-selector": "~2.8|~3.0|~4.0.0"
             },
             "suggest": {
                 "symfony/css-selector": ""
@@ -4936,7 +4897,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-18T12:56:12+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4944,12 +4905,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "dc71961a9d819c8ed677a08238aec1420999227e"
+                "reference": "01243ca615cc1c3baef3a18911a77498ade3507e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/dc71961a9d819c8ed677a08238aec1420999227e",
-                "reference": "dc71961a9d819c8ed677a08238aec1420999227e",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/01243ca615cc1c3baef3a18911a77498ade3507e",
+                "reference": "01243ca615cc1c3baef3a18911a77498ade3507e",
                 "shasum": ""
             },
             "require": {
@@ -4960,10 +4921,10 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/dependency-injection": "~3.3",
-                "symfony/expression-language": "~2.8|~3.0",
-                "symfony/stopwatch": "~2.8|~3.0"
+                "symfony/config": "~2.8|~3.0|~4.0.0",
+                "symfony/dependency-injection": "~3.3|~4.0.0",
+                "symfony/expression-language": "~2.8|~3.0|~4.0.0",
+                "symfony/stopwatch": "~2.8|~3.0|~4.0.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -4999,7 +4960,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-18T12:56:12+00:00"
         },
         {
             "name": "symfony/finder",
@@ -5115,19 +5076,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "19248c8f75889448c79bd1184d6df0211b441de0"
+                "reference": "d7906a08163e0450b015031ec81934553543e6d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/19248c8f75889448c79bd1184d6df0211b441de0",
-                "reference": "19248c8f75889448c79bd1184d6df0211b441de0",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/d7906a08163e0450b015031ec81934553543e6d9",
+                "reference": "d7906a08163e0450b015031ec81934553543e6d9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "symfony/console": "~2.8|~3.0"
+                "symfony/console": "~2.8|~3.0|~4.0.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -5162,7 +5123,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-18T12:56:12+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5368,8 +5329,7 @@
         "asofter/yii2-imperavi-redactor": 20,
         "kartik-v/yii2-export": 20,
         "kartik-v/yii2-mpdf": 20,
-        "trntv/yii2-file-kit": 0,
-        "c006/yii2-migration-utility": 20
+        "trntv/yii2-file-kit": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,

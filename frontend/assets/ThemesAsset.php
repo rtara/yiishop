@@ -1,5 +1,4 @@
 <?php
-// namespace frontend\themes\web6themes;
 namespace frontend\assets;
 
 use yii\web\AssetBundle;
@@ -9,7 +8,6 @@ use yii\web\AssetBundle;
  {
      public $sourcePath = '@frontend/themes/web6themes/assets';
      public $css = [
-//         'css/bootstrap.css',
          'css/style.css',
          'css/font-awesome.css',
          'css/flexslider.css',

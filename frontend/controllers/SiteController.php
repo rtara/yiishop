@@ -22,6 +22,7 @@ use dvizh\shop\models\Category;
  */
 class SiteController extends Controller
 {
+
     /**
      * @inheritdoc
      */

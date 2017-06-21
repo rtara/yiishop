@@ -4,6 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use common\models\LoginForm;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -15,10 +17,12 @@ use frontend\components\widgets\CategoryDropdown;
 
 
 ThemesAsset::register($this);
+$model=new LoginForm();
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +45,7 @@ ThemesAsset::register($this);
 </head>
 
 <body>
+
 <?php $this->beginBody() ?>
 <!-- header modal -->
 <div class="modal fade" id="myModal88" tabindex="-1" role="dialog" aria-labelledby="myModal88"
@@ -64,28 +69,43 @@ ThemesAsset::register($this);
                                 <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                     <div class="facts">
                                         <div class="register">
-                                            <form action="#" method="post">
-                                                <input name="Email" placeholder="Email Address" type="text" required="">
-                                                <input name="Password" placeholder="Password" type="password" required="">
-                                                <div class="sign-up">
-                                                    <input type="submit" value="Sign in"/>
+                                            <div class="site-login">
+                                                 <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+
+                                                        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+
+                                                        <?= $form->field($model, 'password')->passwordInput() ?>
+
+                                                        <?= $form->field($model, 'rememberMe')->checkbox() ?>
+
+                                                        <div class="form-group">
+                                                            <?= Html::submitInput('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                                                        </div>
+                                                        <?php ActiveForm::end(); ?>
+                                                    </div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
+                                            <?php $form = ActiveForm::begin(['id' => 'form-signup']);?>
                                             <form action="#" method="post">
                                                 <input placeholder="Name" name="Name" type="text" required="">
                                                 <input placeholder="Email Address" name="Email" type="email" required="">
                                                 <input placeholder="Password" name="Password" type="password" required="">
                                                 <input placeholder="Confirm Password" name="Password" type="password" required="">
                                                 <div class="sign-up">
-                                                    <input type="submit" value="Create Account"/>
+                                                    <div class="form-group">
+                                                        <?= Html::submitInput('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                                                    </div>
                                                 </div>
                                             </form>
+                                            <?php ActiveForm::end(); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -101,10 +121,10 @@ ThemesAsset::register($this);
                             </div>
                             <div class="col-md-12">
                                 <ul class="social">
-                                    <li class="social_facebook"><a href="#" class="entypo-facebook"></a></li>
-                                    <li class="social_dribbble"><a href="#" class="entypo-dribbble"></a></li>
-                                    <li class="social_twitter"><a href="#" class="entypo-twitter"></a></li>
-                                    <li class="social_behance"><a href="#" class="entypo-behance"></a></li>
+                                    <li class="social_facebook"><a href="https://www.facebook.com" class="entypo-facebook"></a></li>
+                                    <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
+                                    <li class="social_twitter"><a href="https://twitter.com" class="entypo-twitter"></a></li>
+                                    <li class="social_behance"><a href="https://pinterest.com" class="entypo-behance"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -157,7 +177,7 @@ ThemesAsset::register($this);
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                        </button>
                    </form>
-                   </div>
+               </div>
            </div>
        </div>
 <!-- //header -->
@@ -197,24 +217,7 @@ ThemesAsset::register($this);
                 ?>
            </div>
     </div>
-<!-- //top-brands -->
-<!-- newsletter -->
-<!--    <div class="newsletter">-->
-<!--    <div class="container">-->
-<!--        <div class="col-md-6 w3agile_newsletter_left">-->
-<!--            <h3>Newsletter</h3>-->
-<!--            <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>-->
-<!--</div>-->
-<!--<div class="col-md-6 w3agile_newsletter_right">-->
-<!--            <form action="#" method="post">-->
-<!--                <input type="email" name="Email" placeholder="Email" required="">-->
-<!--                <input type="submit" value="" />-->
-<!--            </form>-->
-<!--        </div>-->
-<!--        <div class="clearfix"> </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!-- //newsletter -->
+
 
     <?= $content ?>
 
@@ -261,7 +264,7 @@ ThemesAsset::register($this);
                 <h4>Follow Us</h4>
                 <div class="agileits_social_button">
                     <ul>
-                        <li><a href="#" class="facebook"> </a></li>
+                        <li><a href="facebook.com" class="facebook"> </a></li>
                         <li><a href="#" class="twitter"> </a></li>
                         <li><a href="#" class="google"> </a></li>
                         <li><a href="#" class="pinterest"> </a></li>
