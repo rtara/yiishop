@@ -4,20 +4,24 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use common\models\LoginForm;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use frontend\themes\web6themes\ThemesAsset;
-use frontend\themes\web6themes\view\layouts\footer;
+
 
 
 ThemesAsset::register($this);
+$model=new LoginForm();
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,12 +45,18 @@ ThemesAsset::register($this);
 
 <body>
 
-<?php $this->beginBody() ?>
+
+
+<?php $this->beginBody()?>
 <!-- header modal -->
 <div class="modal fade" id="myModal88" tabindex="-1" role="dialog" aria-labelledby="myModal88"
      aria-hidden="true">
+
     <div class="modal-dialog modal-lg">
+
         <div class="modal-content">
+
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;</button>
@@ -64,28 +74,47 @@ ThemesAsset::register($this);
                                 <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                     <div class="facts">
                                         <div class="register">
-                                            <form action="#" method="post">
-                                                <input name="Email" placeholder="Email Address" type="text" required="">
-                                                <input name="Password" placeholder="Password" type="password" required="">
-                                                <div class="sign-up">
-                                                    <input type="submit" value="Sign in"/>
+                                            <div class="site-login">
+                                                <h1></h1>
+
+                                                <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+
+                                                        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+
+                                                        <?= $form->field($model, 'password')->passwordInput() ?>
+
+                                                        <?= $form->field($model, 'rememberMe')->checkbox() ?>
+
+                                                        <div class="form-group">
+                                                            <?= Html::submitInput('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                                                        </div>
+
+                                                        <?php ActiveForm::end(); ?>
+
+                                                    </div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
+                                            <?php $form = ActiveForm::begin(['id' => 'form-signup']);?>
                                             <form action="#" method="post">
                                                 <input placeholder="Name" name="Name" type="text" required="">
                                                 <input placeholder="Email Address" name="Email" type="email" required="">
                                                 <input placeholder="Password" name="Password" type="password" required="">
                                                 <input placeholder="Confirm Password" name="Password" type="password" required="">
                                                 <div class="sign-up">
-                                                    <input type="submit" value="Create Account"/>
+                                                    <div class="form-group">
+                                                        <?= Html::submitInput('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                                                    </div>
                                                 </div>
                                             </form>
+                                            <?php ActiveForm::end(); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -101,10 +130,10 @@ ThemesAsset::register($this);
                             </div>
                             <div class="col-md-12">
                                 <ul class="social">
-                                    <li class="social_facebook"><a href="#" class="entypo-facebook"></a></li>
-                                    <li class="social_dribbble"><a href="#" class="entypo-dribbble"></a></li>
-                                    <li class="social_twitter"><a href="#" class="entypo-twitter"></a></li>
-                                    <li class="social_behance"><a href="#" class="entypo-behance"></a></li>
+                                    <li class="social_facebook"><a href="https://www.facebook.com" class="entypo-facebook"></a></li>
+                                    <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
+                                    <li class="social_twitter"><a href="https://twitter.com" class="entypo-twitter"></a></li>
+                                    <li class="social_behance"><a href="https://pinterest.com" class="entypo-behance"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -168,7 +197,7 @@ ThemesAsset::register($this);
                    </div>
                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                        <ul class="nav navbar-nav">
-                           <li><a href="index.html" class="act">Home</a></li>
+
                            <!-- Mega Menu -->
                            <li class="dropdown">
                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
@@ -176,31 +205,94 @@ ThemesAsset::register($this);
                                    <div class="row">
                                        <div class="col-sm-3">
                                            <ul class="multi-column-dropdown">
-                                               <h6>Mobiles</h6>
+                                               <h6>Featured</h6><br>
                                                <li><a href="products.html">Mobile Phones</a></li>
-                                               <li><a href="products.html">Mp3 Players <span>New</span></a></li>
-                                               <li><a href="products.html">Popular Models</a></li>
-                                               <li><a href="products.html">All Tablets<span>New</span></a></li>
+                                               <li><a href="products.html">New Tech</a></li>
+                                               <li><a href="products.html">Tech from Start-Ups<span>New</span></a></li>
+                                               <li><a href="products.html">Gift Ideas</a></li>
+                                               <li><a href="products.html">Laptops</a></li>
                                            </ul>
                                        </div>
                                        <div class="col-sm-3">
                                            <ul class="multi-column-dropdown">
-                                               <h6>Accessories</h6>
-                                               <li><a href="products1.html">Laptop</a></li>
-                                               <li><a href="products1.html">Desktop</a></li>
-                                               <li><a href="products1.html">Wearables <span>New</span></a></li>
-                                               <li><a href="products1.html"><i>Summer Store</i></a></li>
+                                               <h6>All Categories</h6><br>
+                                               <li><a href="products1.html">Computers & Tablets</a></li>
+                                               <li><a href="products1.html">Cell Phones</a></li>
+                                               <li><a href="products1.html">Smart Home</a></li>
+                                               <li><a href="products2.html">Cameras & Camcorders</a></li>
+                                               <li><a href="products2.html">TV & Home Theater</a></li>
                                            </ul>
                                        </div>
                                        <div class="col-sm-2">
                                            <ul class="multi-column-dropdown">
-                                               <h6>Home</h6>
-                                               <li><a href="products2.html">Tv</a></li>
-                                               <li><a href="products2.html">Camera</a></li>
-                                               <li><a href="products2.html">AC</a></li>
-                                               <li><a href="products2.html">Grinders</a></li>
+                                               <h6><br></h6><br>
+                                               <li><a href="products2.html">Appliances</a></li>
+                                               <li><a href="products2.html">Audio</a></li>
                                            </ul>
                                        </div>
+
+                                       <div class="clearfix"></div>
+                                   </div>
+                               </ul>
+                           </li>
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">BRANDS<b class="caret"></b></a>
+                               <ul class="dropdown-menu multi-column columns-3">
+                                   <div class="row">
+                                       <div class="col-sm-3">
+                                           <ul class="multi-column-dropdown">
+                                               <h6></h6>
+                                               <div class="sliderfi">
+                                                   <div class="nbs-flexisel-container">
+
+                                                       <ul id="flexiselDemo11" class="nbs-flexisel-ul1" style="left: -100px; display: block;">
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb1.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb2.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb3.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb4.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb5.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <!--<li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb1.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb2.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb3.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb4.jpg" alt=" " class="img-responsive">
+                                                           </li>
+                                                           <li class="nbs-flexisel-item1" style="width: 100px;">
+                                                               <img src="images/tb5.jpg" alt=" " class="img-responsive">
+                                                           </li>-->
+                                                       </ul>
+
+                                                   </div>
+                                               </div>
+
+                                           </ul>
+                                       </div>
+
+
+                                       <div class="clearfix"></div>
+                                   </div>
+                               </ul>
+                           </li>
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">DEALS<b class="caret"></b></a>
+                               <ul class="dropdown-menu multi-column columns-3">
+                                   <div class="row">
                                        <div class="col-sm-4">
                                            <div class="w3ls_products_pos">
                                                <h4>30%<i>Off/-</i></h4>
@@ -211,28 +303,46 @@ ThemesAsset::register($this);
                                    </div>
                                </ul>
                            </li>
-                           <li><a href="about.html">About Us</a></li>
-                           <li class="w3pages">
-                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-                               <ul class="dropdown-menu">
-                                   <li><a href="icons.html">Web Icons</a></li>
-                                   <li><a href="codes.html">Short Codes</a></li>
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES<b class="caret"></b></a>
+                               <ul class="dropdown-menu multi-column columns-3">
+                                   <div class="row">
+                                       <div class="col-sm-3">
+                                           <li><a href="about.html">About Us</a></li>
+                                       </div>
+                                       <div class="col-sm-3">
+                                           <li><a href="mail.html">Mail Us</a></li>
+                                       </div>
+                                       <div class="col-sm-2">
+
+                                       </div>
+                                       <div class="clearfix"></div>
+                                   </div>
                                </ul>
                            </li>
-                           <li><a href="mail.html">Mail Us</a></li>
+
                        </ul>
                    </div>
                </nav>
            </div>
        </div>
 <!-- //navigation -->
-<!-- banner -->
+
+<!-- banner-->
     <div class="banner">
+
         <div class="container">
                <h3>Electronic Store, <span>Special Offers</span></h3>
            </div>
     </div>
+
+
 <!-- //banner -->
+
+
+
+
+
 <!-- banner-bottom -->
     <div class="banner-bottom">
            <div class="container">
@@ -242,7 +352,7 @@ ThemesAsset::register($this);
                            <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
                        </a>
                    </div>
-                   <
+
                    <div id="small-dialog" class="mfp-hide">
                        <iframe src="https://www.youtube.com/embed/ZQa6GUVnbNM"></iframe>
                    </div>
@@ -254,10 +364,11 @@ ThemesAsset::register($this);
                            <li role="presentation" class="active">
                                <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Mobiles</a>
                            </li>
-                           <li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">Audio</a></li>
-                           <li role="presentation"><a href="#video" role="tab" id="video-tab" data-toggle="tab" aria-controls="video">Computer</a></li>
-                           <li role="presentation"><a href="#tv" role="tab" id="tv-tab" data-toggle="tab" aria-controls="tv">Household</a></li>
-                           <li role="presentation"><a href="#kitchen" role="tab" id="kitchen-tab" data-toggle="tab" aria-controls="kitchen">Kitchen</a></li>
+                           <li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">Cellphones & Accessories</a></li>
+                           <li role="presentation"><a href="#video" role="tab" id="video-tab" data-toggle="tab" aria-controls="video">Computers & Tablets</a></li>
+                           <li role="presentation"><a href="#tv" role="tab" id="tv-tab" data-toggle="tab" aria-controls="tv">Cameras & Photo</a></li>
+                           <li role="presentation"><a href="#kitchen" role="tab" id="kitchen-tab" data-toggle="tab" aria-controls="kitchen">TV, Audio & Surveillance</a></li>
+
                        </ul>
                        <div id="myTabContent" class="tab-content">
                            <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
@@ -275,7 +386,8 @@ ThemesAsset::register($this);
                                            <div class="w3_hs_bottom">
                                                <ul>
                                                    <li>
-                                                       <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                       <a href="#" data-toggle="modal" data-target="#myModal">
+                                                           <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                                    </li>
                                                </ul>
                                            </div>
@@ -1461,7 +1573,7 @@ ThemesAsset::register($this);
                 <h4>Follow Us</h4>
                 <div class="agileits_social_button">
                     <ul>
-                        <li><a href="#" class="facebook"> </a></li>
+                        <li><a href="facebook.com" class="facebook"> </a></li>
                         <li><a href="#" class="twitter"> </a></li>
                         <li><a href="#" class="google"> </a></li>
                         <li><a href="#" class="pinterest"> </a></li>
@@ -1486,69 +1598,9 @@ ThemesAsset::register($this);
 <!-- //footer -->
 <!-- cart-js -->
 
-<!--<script>
-    w3ls.render();
 
-    w3ls.cart.on('w3sb_checkout', function (evt) {
-        var items, len, i;
-
-        if (this.subtotal() > 0) {
-            items = this.items();
-
-            for (i = 0, len = items.length; i < len; i++) {
-            }
-        }
-    });
-</script>
- //cart-js -->
 </body>
-        <!--Navbar-->
-        <nav class="wrap">
 
-<?php
-
-            /*NavBar::begin([
-                'brandLabel' => 'web6-store',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
-            ];
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = '<li>'
-                    . Html::beginForm(['/site/logout'], 'post')
-                    . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
-                        ['class' => 'btn btn-link logout']
-                    )
-                    . Html::endForm()
-                    . '</li>';
-            }
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
-            ]);
-            NavBar::end();
-            */?>
-
-
-</nav>
-<!--<div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</div>-->
 
 
 

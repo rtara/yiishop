@@ -15,11 +15,13 @@
          'css/jquery.countdown.css',
          'css/fasthover.css',
          'css/popuo-box.css',
-         'css/',
+
+
 
      ];
      public $js = [
          'js/jquery.min.js',
+
          'js/bootstrap-3.1.1.min.js',
          //
          'js/easyResponsiveTabs.js',
@@ -28,10 +30,14 @@
          'js/jquery.flexisel.js',
          'js/jquery.flexslider.js',
          'js/jquery.magnific-popup.js',
-
          'js/jquery.wmuSlider.js',
          'js/minicart.js',
          'js/script.js',
+
+
+
+
+
      ];
      public $depends = [
          'yii\web\YiiAsset',

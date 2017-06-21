@@ -25,7 +25,22 @@ body a:hover{
 	text-decoration:none;
 }
 /*-- header --*/
-input[type="submit"],.panel-body ul li a,.checkout-right-basket a,.additional_info_sub_grid_right a,.panel_bottom li a,.panel-title a,.breadcrumb_dress ul li a,.multi-column-dropdown li a,.footer-copy p a,.w3_footer_grid ul li a,.agileinfo_banner_bottom1_grid_left a,.navbar-default .navbar-nav > li > a,.simpleCart_shelfItem p a,.agile_ecommerce_tab_left h5 a,.w3_hs_bottom ul li a,.team-bottom a{
+input[type="submit"],
+
+.panel-body ul li a,
+.checkout-right-basket a,
+.additional_info_sub_grid_right a,
+.panel_bottom li a,.panel-title a,
+.breadcrumb_dress ul li a,
+.multi-column-dropdown li a,
+.footer-copy p a,
+.w3_footer_grid ul li a,
+.agileinfo_banner_bottom1_grid_left a,
+.navbar-default
+.navbar-nav > li > a,
+.simpleCart_shelfItem p a,
+.agile_ecommerce_tab_left h5 a,
+.w3_hs_bottom ul li a,.team-bottom a{
 	transition:.5s ease-in-out;
 	-webkit-transition:.5s ease-in-out;
 	-moz-transition:.5s ease-in-out;
@@ -34,6 +49,8 @@ input[type="submit"],.panel-body ul li a,.checkout-right-basket a,.additional_in
 .header {
     padding: 2em 0 0;
 }
+
+
 .w3l_login{
 	float:left;
 }
@@ -235,8 +252,19 @@ a.simpleCart_empty {
 	-ms-animation: zoomIn .3s ease;
 	animation: zoomIn .3s ease;
 }
-#w3lssbmincart form.sbmincart-empty {    font-size: 16px;    font-weight: bold;}
-#w3lssbmincart ul {    clear: both;    float: left;    width: 100%;    margin: 5px 0 20px;    padding: 1em;    list-style-type: none;    background: #fff;    border: 1px solid #ccc;    border-radius: 4px;    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);}
+#w3lssbmincart form.sbmincart-empty {font-size: 16px; font-weight: bold;}
+#w3lssbmincart ul {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin: 5px 0 20px;
+    padding: 1em;
+    list-style-type: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
 #w3lssbmincart .sbmincart-empty ul {    display: none;}
 #w3lssbmincart .sbmincart-closer {
     float: right;
@@ -4989,3 +5017,7 @@ td.invert-image a img {
 		margin-bottom: 1em;
 	}
 }
+
+
+
+

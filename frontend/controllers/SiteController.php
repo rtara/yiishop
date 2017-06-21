@@ -20,6 +20,7 @@ use dvizh\shop\models\Product;
  */
 class SiteController extends Controller
 {
+
     /**
      * @inheritdoc
      */
