@@ -110,9 +110,7 @@ class MyDropdown extends \yii\bootstrap\Dropdown
             }
         }
 
-
-//        echo $k;
-
+// iterl_todo : possibly appropriate to add .clearfix instead of wrap in .row
 
         if ($k%4==4 && $k!=0) {
             $linesModified[] = Html::tag('div', implode("\n", $tmp), array('class' => 'row'));

@@ -28,7 +28,6 @@ use yii\web\AssetBundle;
          'js/jquery.flexisel.js',
          'js/jquery.flexslider.js',
          'js/jquery.magnific-popup.js',
-
          'js/jquery.wmuSlider.js',
          'js/minicart.js',
          'js/script.js',

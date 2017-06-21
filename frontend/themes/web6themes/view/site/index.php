@@ -1,17 +1,7 @@
 <?php
-use yii\helpers\Html;
-use kartik\grid\GridView;
+
 use dvizh\cart\widgets\BuyButton;
-use dvizh\cart\widgets\TruncateButton;
-use dvizh\cart\widgets\CartInformer;
-use dvizh\cart\widgets\ElementsList;
-use dvizh\cart\widgets\DeleteButton;
-use dvizh\cart\widgets\ChangeCount;
-use dvizh\cart\widgets\ChangeOptions;
-use dvizh\cart\widgets;
-use yii\widgets\DetailView;
-use dvizh\shop\models\category\CategorySearch;
-use dvizh\shop\models\Category;
+
 
 ?>
 <!-- //navigation -->
