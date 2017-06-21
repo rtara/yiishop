@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Час створення: Чрв 14 2017 р., 20:16
+-- Час створення: Чрв 21 2017 р., 18:53
 -- Версія сервера: 5.7.13
 -- Версія PHP: 7.0.8
 
@@ -28,17 +28,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `cart` (
   `id` int(11) NOT NULL,
-  `user_id` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` varchar(55) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tmp_user_id` varchar(55) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_time` int(11) NOT NULL,
   `updated_time` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп даних таблиці `cart`
 --
 
-INSERT INTO `cart` (`id`, `user_id`, `created_time`, `updated_time`) VALUES
-(1, 'd20e00de62cd50174fa6b2f20f4f8864', 1496351778, 1496498079);
+INSERT INTO `cart` (`id`, `user_id`, `tmp_user_id`, `created_time`, `updated_time`) VALUES
+(1, 'd20e00de62cd50174fa6b2f20f4f8864', NULL, 1496351778, 1496498079),
+(2, NULL, 'd20e00de62cd50174fa6b2f20f4f8864', 1497828813, 1498050033),
+(3, NULL, 'f5f48c40c5ebc96e75c39a546f07e300', 1498040182, 1498040182),
+(4, NULL, '9dd34f90639f0b6823f4918f4c6c5815', 1498040191, 1498040191);
 
 -- --------------------------------------------------------
 
@@ -63,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `cart_element` (
 --
 
 INSERT INTO `cart_element` (`id`, `parent_id`, `model`, `cart_id`, `item_id`, `count`, `price`, `hash`, `options`) VALUES
-(1, NULL, 'dvizh\\shop\\models\\Product', 1, 11, 1, NULL, '1bb161926dc113a150c7498507271103', '[]');
+(1, NULL, 'dvizh\\shop\\models\\Product', 2, 2, 2, NULL, '1bb161926dc113a150c7498507271103', '[]');
 
 -- --------------------------------------------------------
 
@@ -227,6 +231,31 @@ INSERT INTO `image` (`id`, `title`, `alt`, `filePath`, `itemId`, `isMain`, `mode
 -- --------------------------------------------------------
 
 --
+-- Структура таблиці `lang`
+--
+
+CREATE TABLE IF NOT EXISTS `lang` (
+  `id` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `local` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `default` smallint(6) NOT NULL DEFAULT '0',
+  `date_update` int(11) NOT NULL,
+  `date_create` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `lang`
+--
+
+INSERT INTO `lang` (`id`, `url`, `local`, `name`, `default`, `date_update`, `date_create`) VALUES
+(1, 'en', 'en-EN', 'English', 0, 1497812244, 1497812244),
+(2, 'uk', 'uk-UK', 'Українська', 1, 1497812244, 1497812244),
+(3, 'ru', 'ru-RU', 'Русский', 0, 1497812244, 1497812244);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблиці `migration`
 --
 
@@ -258,7 +287,9 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 ('m170419_110711_model_name_field', 1495565100),
 ('m170425_115443_latin_value_field', 1495565100),
 ('m170426_105633_modif_type_field', 1495565100),
+('m170529_152556_lang', 1497812245),
 ('m230217_134711_altertable_promocode_used', 1495565101),
+('m260519_000708_alter_cart_table', 1497812248),
 ('m314315_215216_create_seo_table', 1495565101);
 
 -- --------------------------------------------------------
@@ -362,7 +393,7 @@ CREATE TABLE IF NOT EXISTS `seo` (
   `text` text,
   `meta_index` varchar(255) DEFAULT NULL,
   `redirect_301` varchar(522) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `seo`
@@ -398,7 +429,9 @@ INSERT INTO `seo` (`id`, `item_id`, `modelName`, `h1`, `title`, `keywords`, `des
 (27, 16, 'dvizh\\shop\\models\\Product', '', '', '', '', '', '', ''),
 (28, 7, 'dvizh\\shop\\models\\Producer', '', '', '', '', '', '', ''),
 (29, 17, 'dvizh\\shop\\models\\Product', '', '', '', '', '', '', ''),
-(30, 18, 'dvizh\\shop\\models\\Product', '', '', '', '', '', '', '');
+(30, 18, 'dvizh\\shop\\models\\Product', '', '', '', '', '', '', ''),
+(31, 41, 'dvizh\\shop\\models\\Category', '', '', '', '', '', '', ''),
+(32, 42, 'dvizh\\shop\\models\\Category', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -415,32 +448,22 @@ CREATE TABLE IF NOT EXISTS `shop_category` (
   `text` text COLLATE utf8_unicode_ci,
   `image` text COLLATE utf8_unicode_ci,
   `sort` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп даних таблиці `shop_category`
 --
 
 INSERT INTO `shop_category` (`id`, `parent_id`, `name`, `code`, `slug`, `text`, `image`, `sort`) VALUES
-(1, 6, 'Побутова техніка', NULL, 'pobutova-tehnika', '', NULL, NULL),
-(2, 6, 'Телевізори і аудіо', NULL, 'televizori-i-audio', '', NULL, NULL),
-(3, 7, 'Смартфони і телефони', NULL, 'smartfoni-i-telefoni', '', NULL, NULL),
-(4, 7, 'Ноутбуки і планшети', NULL, 'noutbuki-i-planseti', '', NULL, NULL),
-(5, NULL, 'Фото і відео', NULL, 'foto-i-video', '', NULL, NULL),
-(6, NULL, 'Техніка для дому', NULL, 'ofisna-technika', NULL, NULL, NULL),
-(7, NULL, 'Цифрова техніка\r\n', NULL, 'cifrova technika', NULL, NULL, NULL),
-(8, 5, 'Камери', NULL, 'cameri', NULL, NULL, NULL),
-(9, 5, 'Фотоапарати', NULL, 'fotoaparaty', NULL, NULL, NULL),
-(12, NULL, 'NewCat', NULL, NULL, NULL, NULL, NULL),
-(13, 12, 'Sub', NULL, NULL, NULL, NULL, NULL),
-(14, NULL, '5', NULL, NULL, NULL, NULL, NULL),
-(15, 14, '6', NULL, NULL, NULL, NULL, NULL),
-(16, NULL, '1', NULL, NULL, NULL, NULL, NULL),
-(17, 16, '2', NULL, NULL, NULL, NULL, NULL),
-(18, NULL, '3', NULL, NULL, NULL, NULL, NULL),
-(19, 18, '4', NULL, NULL, NULL, NULL, NULL),
-(20, 12, 'SubSub', NULL, NULL, NULL, NULL, NULL),
-(21, 6, 'nujj', NULL, NULL, NULL, NULL, NULL);
+(1, 6, 'Побутова техніка', '', 'pobutova-tehnika', '', '', NULL),
+(2, 6, 'Телевізори і аудіо', '', 'televizori-i-audio', '', '', NULL),
+(3, 7, 'Смартфони і телефони', '', 'smartfoni-i-telefoni', '', '', NULL),
+(4, 7, 'Ноутбуки і планшети', '', 'noutbuki-i-planseti', '', '', NULL),
+(5, NULL, 'Фото і відео', '', 'foto-i-video', '', '', NULL),
+(6, NULL, 'Техніка для дому', '', 'ofisna-technika', '', '', NULL),
+(7, NULL, 'Цифрова техніка\n', '', 'cifrova-technika', '', '', NULL),
+(8, 5, 'Камери', '', 'cameri', '', '', NULL),
+(9, 5, 'Фотоапарати', '', 'fotoaparaty', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -596,24 +619,24 @@ CREATE TABLE IF NOT EXISTS `shop_product` (
 --
 
 INSERT INTO `shop_product` (`id`, `category_id`, `producer_id`, `amount`, `related_products`, `name`, `code`, `text`, `short_text`, `is_new`, `is_popular`, `is_promo`, `images`, `available`, `sort`, `slug`, `related_ids`) VALUES
-(1, 4, 4, NULL, NULL, 'Ноутбук ASUS VivoBook Max F541SA-XO397D Chocolate Black (90NB0CH1-M06300)', '6315898', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'noutbuk-asus-vivobook-max-f541sa-xo397d-chocolate-black-90nb0ch1-m06300', 'a:0:{}'),
-(2, 4, 4, NULL, NULL, 'Ноутбук ASUS VivoBook Max F541SC-XO119T (90NB0CI3-M02080)', '6315891', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'noutbuk-asus-vivobook-max-f541sc-xo119t-90nb0ci3-m02080', 'a:0:{}'),
-(3, 4, 6, NULL, NULL, 'Ноутбук LENOVO 100S-14 (80R9009RUA)', '6289012', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'noutbuk-lenovo-100s-14-80r9009rua', 'a:0:{}'),
-(4, 4, 3, NULL, NULL, 'Ноутбук APPLE A1466 MacBook Air 13W" (MMGF2UA/A)', '6294337', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'noutbuk-apple-a1466-macbook-air-13w-mmgf2ua-a', 'a:0:{}'),
-(5, 4, 3, NULL, NULL, 'Ноутбук APPLE A1466 MacBook Air 13W" (MMGG2UA/A)', '6294338', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'noutbuk-apple-a1466-macbook-air-13w-mmgg2ua-a', 'a:0:{}'),
-(6, 4, 3, NULL, NULL, 'Ультрабук APPLE A1534 MacBook 12" Retina (MLH72UA/A)', '6294342', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'ul-trabuk-apple-a1534-macbook-12-retina-mlh72ua-a', 'a:0:{}'),
-(7, 4, 1, NULL, NULL, 'Планшет Samsung SM-T561N Galaxy Tab E 9.6 3G ZNA Gold brown', '6229736', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'planset-samsung-sm-t561n-galaxy-tab-e-9-6-3g-zna-gold-brown', 'a:0:{}'),
-(8, 4, 6, NULL, NULL, 'Планшет Lenovo IdeaPad Tab 3-710F 8GB (ZA0R0006)', '6275011', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'planset-lenovo-ideapad-tab-3-710f-8gb-za0r0006', 'a:0:{}'),
-(9, 4, 5, NULL, NULL, 'Планшет BRAVIS NB107 10.1" 3G (black)', '6284373', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'planset-bravis-nb107-10-1-3g-black', 'a:0:{}'),
-(10, 4, 6, NULL, NULL, 'Планшет LENOVO TAB3-710I 1G+16GWH-UA (ZA0S0119UA)', '6307076', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'planset-lenovo-tab3-710i-1g-16gwh-ua-za0s0119ua', 'a:0:{}'),
-(11, 1, 1, NULL, NULL, 'Холодильник SAMSUNG RB37J5100SA/UA', '6320980', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'holodil-nik-samsung-rb37j5100sa-ua', 'a:0:{}'),
-(12, 1, 2, NULL, NULL, 'Холодильник BOSCH KAI90VI20', '6234418', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'holodil-nik-bosch-kai90vi20', 'a:0:{}'),
-(13, 2, 1, NULL, NULL, 'Телевізор SAMSUNG UE32J5200AKXUA', '6231245', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'televizor-samsung-ue32j5200akxua', 'a:0:{}'),
-(14, 2, 5, NULL, NULL, 'Телевізор BRAVIS LED-32E3000 Smart +T2 black', '6296785', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'televizor-bravis-led-32e3000-smart-t2-black', 'a:0:{}'),
-(15, 3, 6, NULL, NULL, 'Смартфон LENOVO VIBE P1m Dual Sim 16 Gb black', '6248798', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'smartfon-lenovo-vibe-p1m-dual-sim-16-gb-black', 'a:0:{}'),
-(16, 3, 1, NULL, NULL, 'Смартфон SAMSUNG SM-J510H Galaxy J5 Duos ZDD (gold)', '6280637', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'smartfon-samsung-sm-j510h-galaxy-j5-duos-zdd-gold', 'a:0:{}'),
-(17, 5, 7, NULL, NULL, 'Відеокамера SONY HDR-CX405', '6217323', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'videokamera-sony-hdr-cx405', 'a:0:{}'),
-(18, 5, 7, NULL, NULL, 'Цифровой фотоаппарат SONY Cybershot DSC-H300 Black', '6102521', '', '', 'no', 'no', 'no', NULL, 'yes', NULL, 'cifrovoj-fotoapparat-sony-cybershot-dsc-h300-black', 'a:0:{}');
+(1, 4, 4, NULL, '', 'Ноутбук ASUS VivoBook Max F541SA-XO397D Chocolate Black (90NB0CH1-M06300)', '6315898', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'noutbuk-asus-vivobook-max-f541sa-xo397d-chocolate-black-90nb0ch1-m06300', 'a:0:{}'),
+(2, 4, 4, NULL, '', 'Ноутбук ASUS VivoBook Max F541SC-XO119T (90NB0CI3-M02080)', '6315891', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'noutbuk-asus-vivobook-max-f541sc-xo119t-90nb0ci3-m02080', 'a:0:{}'),
+(3, 4, 6, NULL, '', 'Ноутбук LENOVO 100S-14 (80R9009RUA)', '6289012', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'noutbuk-lenovo-100s-14-80r9009rua', 'a:0:{}'),
+(4, 4, 3, NULL, '', 'Ноутбук APPLE A1466 MacBook Air 13W" (MMGF2UA/A)', '6294337', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'noutbuk-apple-a1466-macbook-air-13w-mmgf2ua-a', 'a:0:{}'),
+(5, 4, 3, NULL, '', 'Ноутбук APPLE A1466 MacBook Air 13W" (MMGG2UA/A)', '6294338', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'noutbuk-apple-a1466-macbook-air-13w-mmgg2ua-a', 'a:0:{}'),
+(6, 4, 3, NULL, '', 'Ультрабук APPLE A1534 MacBook 12" Retina (MLH72UA/A)', '6294342', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'ul-trabuk-apple-a1534-macbook-12-retina-mlh72ua-a', 'a:0:{}'),
+(7, 4, 1, NULL, '', 'Планшет Samsung SM-T561N Galaxy Tab E 9.6 3G ZNA Gold brown', '6229736', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'planset-samsung-sm-t561n-galaxy-tab-e-9-6-3g-zna-gold-brown', 'a:0:{}'),
+(8, 4, 6, NULL, '', 'Планшет Lenovo IdeaPad Tab 3-710F 8GB (ZA0R0006)', '6275011', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'planset-lenovo-ideapad-tab-3-710f-8gb-za0r0006', 'a:0:{}'),
+(9, 4, 5, NULL, '', 'Планшет BRAVIS NB107 10.1" 3G (black)', '6284373', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'planset-bravis-nb107-10-1-3g-black', 'a:0:{}'),
+(10, 4, 6, NULL, '', 'Планшет LENOVO TAB3-710I 1G+16GWH-UA (ZA0S0119UA)', '6307076', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'planset-lenovo-tab3-710i-1g-16gwh-ua-za0s0119ua', 'a:0:{}'),
+(11, 1, 1, NULL, '', 'Холодильник SAMSUNG RB37J5100SA/UA', '6320980', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'holodil-nik-samsung-rb37j5100sa-ua', 'a:0:{}'),
+(12, 1, 2, NULL, '', 'Холодильник BOSCH KAI90VI20', '6234418', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'holodil-nik-bosch-kai90vi20', 'a:0:{}'),
+(13, 2, 1, NULL, '', 'Телевізор SAMSUNG UE32J5200AKXUA', '6231245', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'televizor-samsung-ue32j5200akxua', 'a:0:{}'),
+(14, 2, 5, NULL, '', 'Телевізор BRAVIS LED-32E3000 Smart +T2 black', '6296785', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'televizor-bravis-led-32e3000-smart-t2-black', 'a:0:{}'),
+(15, 3, 6, NULL, '', 'Смартфон LENOVO VIBE P1m Dual Sim 16 Gb black', '6248798', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'smartfon-lenovo-vibe-p1m-dual-sim-16-gb-black', 'a:0:{}'),
+(16, 3, 1, NULL, '', 'Смартфон SAMSUNG SM-J510H Galaxy J5 Duos ZDD (gold)', '6280637', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'smartfon-samsung-sm-j510h-galaxy-j5-duos-zdd-gold', 'a:0:{}'),
+(17, 5, 7, NULL, '', 'Відеокамера SONY HDR-CX405', '6217323', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'videokamera-sony-hdr-cx405', 'a:0:{}'),
+(18, 5, 7, NULL, '', 'Цифровой фотоаппарат SONY Cybershot DSC-H300 Black', '6102521', '', '', 'no', 'no', 'no', '', 'yes', NULL, 'cifrovoj-fotoapparat-sony-cybershot-dsc-h300-black', 'a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -646,31 +669,7 @@ CREATE TABLE IF NOT EXISTS `shop_product_to_category` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп даних таблиці `shop_product_to_category`
---
-
-INSERT INTO `shop_product_to_category` (`id`, `product_id`, `category_id`) VALUES
-(2, 1, 4),
-(4, 2, 4),
-(6, 3, 4),
-(8, 4, 4),
-(10, 5, 4),
-(12, 6, 4),
-(14, 7, 4),
-(16, 8, 4),
-(18, 9, 4),
-(20, 10, 4),
-(22, 11, 1),
-(24, 12, 1),
-(26, 13, 2),
-(28, 14, 2),
-(30, 15, 3),
-(32, 16, 3),
-(34, 17, 5),
-(36, 18, 5);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -745,7 +744,8 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `tmp_user_id` (`tmp_user_id`);
 
 --
 -- Індекси таблиці `cart_element`
@@ -812,6 +812,12 @@ ALTER TABLE `filter_variant`
 -- Індекси таблиці `image`
 --
 ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Індекси таблиці `lang`
+--
+ALTER TABLE `lang`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -962,7 +968,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблиці `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблиці `cart_element`
 --
@@ -1014,6 +1020,11 @@ ALTER TABLE `filter_variant`
 ALTER TABLE `image`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
+-- AUTO_INCREMENT для таблиці `lang`
+--
+ALTER TABLE `lang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT для таблиці `promocode`
 --
 ALTER TABLE `promocode`
@@ -1047,12 +1058,12 @@ ALTER TABLE `promocode_used`
 -- AUTO_INCREMENT для таблиці `seo`
 --
 ALTER TABLE `seo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT для таблиці `shop_category`
 --
 ALTER TABLE `shop_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблиці `shop_incoming`
 --
@@ -1092,7 +1103,7 @@ ALTER TABLE `shop_product_modification`
 -- AUTO_INCREMENT для таблиці `shop_product_to_category`
 --
 ALTER TABLE `shop_product_to_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблиці `shop_stock`
 --
