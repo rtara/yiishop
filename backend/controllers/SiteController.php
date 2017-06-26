@@ -6,6 +6,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\User;
+use yii\data\Pagination;
 
 /**
  * Site controller
@@ -98,5 +100,16 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+	
+	public function actionUsers()
+    {	
+		$users = User::find()->orderBy(['username' => SORT_DESC]);
+		$uscount=$users->count();
+		$pagination = new Pagination(['totalCount' => $uscount, 'pageSize'=>3]);
+		$users=$users->offset($pagination->offset)
+				->limit($pagination->limit)
+				->all();
+		return $this->render('users',  [ 'users'=>$users, 'pagination'=>$pagination] );
     }
 }
