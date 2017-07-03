@@ -172,6 +172,7 @@ ThemesAsset::register($this);
                 ]);
 
                 $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
+                // iterl_todo : add to category dropdown a quantifier of available products under a category
                 $menuItems[] = ['label' => 'Products', 'items' => CategoryDropdown::run()];
                 $menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']];
 
@@ -215,6 +216,13 @@ ThemesAsset::register($this);
 <!--    </div>-->
 <!--</div>-->
 <!-- //newsletter -->
+
+<!--<div style="background: greenyellow">-->
+<!--    --><?php //$elements = yii::$app->cart->elements;; ?>
+<!--    --><?//= $this->render('@vendor/dvizh/yii2-cart/src/views/default/index', compact('elements')) ?>
+<!--</div>-->
+
+
 
     <?= $content ?>
 

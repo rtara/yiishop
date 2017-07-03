@@ -30,7 +30,7 @@ class CategoryDropdown
     {
         $menuItems = [];
         foreach ($tree as $category) {
-            if ($category['childs']) {
+            if (isset($category['childs'])) {
                 array_push($menuItems, [
                     'label' => $category['name'],
 //                    'url' => Url::to('category/index', ['id' => $category['id']]),
@@ -50,8 +50,8 @@ class CategoryDropdown
     public static function run()
     {
         //get cache
-//        $catDropdownItems = Yii::$app->cache->get('catDropdownItems');
-//        if ($catDropdownItems) return $catDropdownItems;
+        $catDropdownItems = Yii::$app->cache->get('catDropdownItems');
+        if ($catDropdownItems) return $catDropdownItems;
         $tree = static::getTree(Category::find()->indexBy('id')->asArray()->all());
         $items = static::buildItems($tree);
         //set cache

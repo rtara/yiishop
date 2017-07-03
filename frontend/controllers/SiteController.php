@@ -20,7 +20,7 @@ use dvizh\shop\models\Category;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AppController
 {
     /**
      * @inheritdoc
@@ -76,8 +76,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->setMeta('Home');
         $elements = yii::$app->cart->elements;
-        $products = Product::find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
+        $products = Product::Find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
         return $this->render('index', compact( 'elements', 'products'));
     }
 
