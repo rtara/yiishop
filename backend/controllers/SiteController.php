@@ -106,10 +106,15 @@ class SiteController extends Controller
     {	
 		$users = User::find()->orderBy(['username' => SORT_DESC]);
 		$uscount=$users->count();
-		$pagination = new Pagination(['totalCount' => $uscount, 'pageSize'=>3]);
+		$pagination = new Pagination(['totalCount' => $uscount, 'pageSize'=>20]);
 		$users=$users->offset($pagination->offset)
 				->limit($pagination->limit)
 				->all();
 		return $this->render('users',  [ 'users'=>$users, 'pagination'=>$pagination] );
     }
+		
+	public function actionEditUser()
+    {
+		
+	}
 }
