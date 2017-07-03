@@ -113,8 +113,11 @@ class SiteController extends Controller
 		return $this->render('users',  [ 'users'=>$users, 'pagination'=>$pagination] );
     }
 		
-	public function actionEditUser()
+	public function actionEdituser()
     {
-		
+		$id= Yii::$app->request->get('id',null);
+		var_dump($id);
+		$user = User::find()->where(['id' => $id]) ->one();;
+		return $this->render('edituser',['user'=>$user]);
 	}
 }

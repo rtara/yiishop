@@ -7,8 +7,9 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\LinkPager;
+use yii\helpers\Url;
 
-$this->title = 'Login';
+$this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <table class="table"> 
@@ -18,17 +19,19 @@ $this->params['breadcrumbs'][] = $this->title;
 		  <th>Email</th>
 		  <th>Group</th>
 		  <th>Registration</th>
+		  <th>Password</th>
 		  <th>Action</th>
 		</tr>
 	  </thead>
 	<tbody>
 	<?php foreach($users as $user){ ?>
-	<tr>
-		<td><?= $user->username?></td>
-		<td><?= $user->email?></td>
-		<td><?= $user->group?></td>
-		<td><?= Yii::$app->formatter->asDate($user->created_at , 'long')?></td>
-		<td> <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+	<tr id="user_<?= $user->id?>">
+		<td><input type="string" class="btn btn-default" value="<?= $user->username?>"></td>
+		<td><input type="string" class="btn btn-default" value="<?= $user->email?>"></td>
+		<td><input type="string" class="btn btn-default" value="<?= $user->group?>"></td>
+		<td><input type="string" class="btn btn-default" value="<?= Yii::$app->formatter->asDate($user->created_at , 'long')?>"></td>
+		<td><input type="string" class="btn btn-default"></td>
+		<td> <a href="<?=Url::to(['site/edituser', 'id' => $user->id])?>" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
 	</tr>
 	<? } ?>
 	</tbody>
