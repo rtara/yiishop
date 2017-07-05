@@ -116,8 +116,16 @@ class SiteController extends Controller
 	public function actionEdituser()
     {
 		$id= Yii::$app->request->get('id',null);
-		var_dump($id);
-		$user = User::find()->where(['id' => $id]) ->one();;
+		$user = User::find()->where(['id' => $id]) ->one();
 		return $this->render('edituser',['user'=>$user]);
+	}
+	
+	public function actionDeleteuser()
+	{
+		$id= Yii::$app->request->get('id',null);
+		foreach (User::find()->where(['id' => $id])->all() as $user) {
+			$user->delete();
+		}
+		return $this->redirect(Yii::$app->request->referrer);
 	}
 }
