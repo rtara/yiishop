@@ -2201,7 +2201,7 @@ ol {
 h2.typoh2{
     margin: 0 0 10px;
 }
-.form-control1, .form-control_2.input-sm{
+.form-control, .form-control1, .form-control_2.input-sm{
 	border: 1px solid #e0e0e0;
 	padding:5px 18px;
 	color: #616161;
@@ -2391,7 +2391,7 @@ ol {
 h2.typoh2{
     margin: 0 0 10px;
 }
-.form-control1, .form-control_2.input-sm{
+.form-control, .form-control1, .form-control_2.input-sm{
 	border: 1px solid #e0e0e0;
 	padding:5px 18px;
 	color: #616161;
@@ -5026,3 +5026,4 @@ td.invert-image a img {
     margin-left: 1em;
     padding-top: 1em;
 }
+

@@ -6,6 +6,8 @@ use dvizh\cart\widgets\BuyButton;
 ?>
 <!-- //navigation -->
 <!-- banner -->
+
+
 <div class="banner">
     <div class="container">
         <h3>Electronic Store, <span>Special Offers</span></h3>
@@ -119,7 +121,7 @@ use dvizh\cart\widgets\BuyButton;
                                         </ul>
                                     </div>
                                 </div>
-                                <h5><a href="single.html">Mobile Phone3</a></h5>
+                                <h5><a href="single/">Mobile Phone3</a></h5>
                                 <div class="simpleCart_shelfItem">
                                     <p><span>$250</span> <i class="item_price">$245</i></p>
                                     <form action="#" method="post">

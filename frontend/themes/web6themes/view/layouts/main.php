@@ -6,6 +6,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use common\models\LoginForm;
+use frontend\models\SignupForm;
+use frontend\models\User;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -18,6 +20,7 @@ use frontend\components\widgets\CategoryDropdown;
 
 ThemesAsset::register($this);
 $model=new LoginForm();
+$model1=new SignupForm();
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginPage() ?>
@@ -55,9 +58,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;</button>
+
                 <h4 class="modal-title" id="myModalLabel">Don't Wait, Login now!</h4>
+
             </div>
             <div class="modal-body modal-body-sub">
+
                 <div class="row">
                     <div class="col-md-8 modal_body_left modal_body_left1" style="border-right: 1px dotted #C2C2C2;padding-right:3em;">
                         <div class="sap_tabs">
@@ -72,7 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <div class="site-login">
                                                  <div class="row">
                                                     <div class="col-lg-5">
-                                                        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                                                        <?php $form = ActiveForm::begin(['id' => 'login-form', 'action' => ['/site/login']]); ?>
 
                                                         <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
@@ -80,8 +86,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                                         <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
+                                                        <div style="color:#999;margin:1em 0">
+                                                            If you forgot your password you can <?= Html::a('reset it', ['/site/request-password-reset']) ?>.
+                                                        </div>
+
                                                         <div class="form-group">
-                                                            <?= Html::submitInput('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                                                            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                                                         </div>
                                                         <?php ActiveForm::end(); ?>
                                                     </div>
@@ -94,17 +104,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="facts">
                                         <div class="register">
                                             <?php $form = ActiveForm::begin(['id' => 'form-signup']);?>
-                                            <form action="#" method="post">
-                                                <input placeholder="Name" name="Name" type="text" required="">
-                                                <input placeholder="Email Address" name="Email" type="email" required="">
-                                                <input placeholder="Password" name="Password" type="password" required="">
-                                                <input placeholder="Confirm Password" name="Password" type="password" required="">
+                                                <?= $form->field($model1,'username')->textInput(['autofocus' => true]) ?>
+
+                                                <?= $form->field($model1, 'email')->textInput() ?>
+
+                                                <?= $form->field($model1, 'password')->passwordInput() ?>
                                                 <div class="sign-up">
                                                     <div class="form-group">
-                                                        <?= Html::submitInput('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                                                        <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                                                     </div>
                                                 </div>
-                                            </form>
                                             <?php ActiveForm::end(); ?>
                                         </div>
                                     </div>
@@ -120,6 +129,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <h3 class="other-nw">Sign in with</h3>
                             </div>
                             <div class="col-md-12">
+                                <div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
                                 <ul class="social">
                                     <li class="social_facebook"><a href="https://www.facebook.com" class="entypo-facebook"></a></li>
                                     <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
@@ -142,7 +152,18 @@ $this->params['breadcrumbs'][] = $this->title;
                        <a href="#" data-toggle="modal" data-target="#myModal88">
                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                        </a>
+
                    </div>
+               <div>
+                   <?php
+                   //$menuItems[] = '<li>'
+                   //    . Html::beginForm(['/site/logout'], 'post')
+                   //    . Html::submitButton(
+                   //        'Logout (' . Yii::$app->user->identity->username . ')',
+                   //        ['class' => 'btn btn-link logout']
+                   //    );
+                   //?>
+               </div>
                    <div id="google_translate_element">
                        <script type="text/javascript">
                            function googleTranslateElementInit() {
@@ -153,7 +174,7 @@ $this->params['breadcrumbs'][] = $this->title;
                    </div>
                    <div class="w3l_logo">
                        <h1>
-                           <a href="index.html">Electronic Store<span>Your stores. Your place.</span>
+                           <a href="index.php">Electronic Store<span>Your stores. Your place.</span>
                            </a>
                        </h1>
                    </div>
@@ -191,19 +212,28 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ]);
 
-                $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
-                $menuItems[] = ['label' => 'Products', 'items' => CategoryDropdown::run()];
-                $menuItems[] = ['label' => 'Cart' , 'url' => ['/cart']];
+                $menuItems[] = ['label' => 'PRODUCTS', 'items' => CategoryDropdown::run()];
+                $menuItems[] = ['label' => 'BRANDS' , ];
+                $menuItems[] = ['label' => 'DEALS' , ];
+                $menuItems[] = ['label' => 'SERVICES' , ];
 
                 if (Yii::$app->user->isGuest) {
-                    $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                    $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                    //$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+                    //$menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
                 } else {
                     $menuItems[] = '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(
                             'Logout (' . Yii::$app->user->identity->username . ')',
                             ['class' => 'btn btn-link logout']
+                        )
+                        . Html::endForm()
+                        . '</li>';
+                    $menuItems[] = '<li>'
+                        . Html::beginForm(['/site/account'], 'post')
+                        . Html::submitButton(
+                            'Account',
+                            ['class' => 'btn btn-link logout ']
                         )
                         . Html::endForm()
                         . '</li>';
