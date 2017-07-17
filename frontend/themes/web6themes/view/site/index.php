@@ -1,6 +1,7 @@
 <?php
 
 use dvizh\cart\widgets\BuyButton;
+use frontend\components\widgets\MyBuyButton;
 
 
 ?>
@@ -62,6 +63,11 @@ use dvizh\cart\widgets\BuyButton;
                                     </div>
                                 </div>
                                 <h5><a href="single.html">Mobile Phone1</a></h5>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="simpleCart_shelfItem">
                                     <p><span>$380</span> <i class="item_price">$350</i></p>
                                     <form action="#" method="post">
@@ -92,6 +98,11 @@ use dvizh\cart\widgets\BuyButton;
                                     </div>
                                 </div>
                                 <h5><a href="single.html">Mobile Phone2</a></h5>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="simpleCart_shelfItem">
                                     <p><span>$330</span> <i class="item_price">$302</i></p>
                                     <form action="#" method="post">
@@ -1199,38 +1210,38 @@ use dvizh\cart\widgets\BuyButton;
     </div>
 
     <div class="body-content">
-        <div class="row">
-            <h1>Товари</h1>
-            <?php foreach ($products as $p) { ?>
-                <div class="col-sm-2 col-md-3">
-                    <div class="thumbnail">
-                        <?php $image = $p->getImage()->getUrl('150x150');
-                        echo "<img src=\"{$image}\" class=\"thumb\" />";
-                        ?>
-                        <div class="caption">
-                            <div><h3><?= $p->name ?></h3></div>
-                            <div>
-                                <h4>
-                                    <?php
-                                    foreach ($p->prices as $price) {
-                                        echo $price->price;
-                                    }
-                                    ?>
-                                    <?php /* Выведет кнопку покупки */ ?>
-                                    <?= BuyButton::widget([
-                                        'model' => $p,
-                                        'text' => 'Замовити',
-                                        'htmlTag' => 'a',
-                                        'cssClass' => 'custom_class'
-                                    ]) ?>
-                                </h4>
-                            </div>
-                            <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
+<!--        <div class="row">-->
+<!--            <h1>Товари</h1>-->
+<!--            --><?php //foreach ($products as $p) { ?>
+<!--                <div class="col-sm-2 col-md-3">-->
+<!--                    <div class="thumbnail">-->
+<!--                        --><?php //$image = $p->getImage()->getUrl('150x150');
+//                        echo "<img src=\"{$image}\" class=\"thumb\" />";
+//                        ?>
+<!--                        <div class="caption">-->
+<!--                            <div><h3>--><?//= $p->name ?><!--</h3></div>-->
+<!--                            <div>-->
+<!--                                <h4>-->
+<!--                                    --><?php
+//                                    foreach ($p->prices as $price) {
+//                                        echo $price->price;
+//                                    }
+//                                    ?>
+<!--                                    --><?php ///* Выведет кнопку покупки */ ?>
+<!--                                    --><?//= BuyButton::widget([
+//                                        'model' => $p,
+//                                        'text' => 'Замовити',
+//                                        'htmlTag' => 'a',
+//                                        'cssClass' => 'custom_class'
+//                                    ]) ?>
+<!--                                </h4>-->
+<!--                            </div>-->
+<!--                            <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            --><?php //} ?>
+<!--        </div>-->
     </div>
 
 <!--    <pre>--><?php //var_dump($dataProvider); ?><!--</pre>-->

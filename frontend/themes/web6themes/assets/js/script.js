@@ -72,16 +72,37 @@ $(document).ready(function(){
         }
     });
 
-    w3ls.render();
+    if ($('.cart-qty-count').text() == '0'){
+        $('.cart-qty').css("display", "none");
+    }
 
-    w3ls.cart.on('w3sb_checkout', function (evt) {
-        var items, len, i;
+    $('.dvizh-cart-delete-button').click( function () {
+        console.log('dgfdgdsfgsdgdf');
+        alert($('.cart-qty-count').text());
+        if ($('.cart-qty-count').text() == '0') {
+            $('.cart-qty').css("display", "none");
 
-        if (this.subtotal() > 0) {
-            items = this.items();
+        }
+    });
 
-            for (i = 0, len = items.length; i < len; i++) {
-            }
+
+    // w3ls.render();
+
+    // w3ls.cart.on('w3sb_checkout', function (evt) {
+    //     var items, len, i;
+    //
+    //     if (this.subtotal() > 0) {
+    //         items = this.items();
+    //
+    //         for (i = 0, len = items.length; i < len; i++) {
+    //         }
+    //     }
+    // });
+
+
+    $('.dvizh-cart-buy-button').click( function () {
+        if ($('.cart-qty-count').text() >= '0'){
+            $('.cart-qty').css("display", "block");
         }
     });
 
