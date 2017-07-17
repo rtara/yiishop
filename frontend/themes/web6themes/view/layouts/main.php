@@ -13,7 +13,7 @@ use dvizh\cart\widgets\CartInformer;
 use dvizh\shop\models\Category;
 use frontend\components\widgets\CategoryDropdown;
 
-
+\dvizh\cart\assets\WidgetAsset::register($this);
 ThemesAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -33,6 +33,7 @@ ThemesAsset::register($this);
     <!-- //for-mobile-apps -->
 
     <!-- web fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <!-- //web fonts -->
@@ -149,16 +150,71 @@ ThemesAsset::register($this);
                            </form>
                        </div>
                    </div>
-                   <div class="cart cart box_1">
-                   <form action="#" method="post" class="last">
-                       <input type="hidden" name="cmd" value="_cart" />
-                       <input type="hidden" name="display" value="1" />
-                       <button class="w3view-cart" type="submit" name="submit" value="">
+<!--                   <div class="cart cart box_1">-->
+<!--                   <form action="#" method="post" class="last">-->
+<!--                       <input type="hidden" name="cmd" value="_cart" />-->
+<!--                       <input type="hidden" name="display" value="1" />-->
+                       <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal">
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                        </button>
-                   </form>
+                        <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
+<!--                   </form>-->
+<!--                   </div>-->
+
+<!--               <button id="foo" data-toggle="modal" data-target="#cart-modal">foooooo</button>-->
+
+               <div id="cart-modal" class="modal" role="dialog">
+                   <div class="modal-dialog">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           </div>
+                           <div class="modal-body">
+                               <?= \dvizh\cart\widgets\ElementsList::widget(['elementView' => '@app/themes/web6themes/view/layouts/_cartRender.php']) ; ?>
+                           </div>
+                           <div class="modal-footer">
+                               <?= CartInformer::widget([]) ; ?>
+                           </div>
+                       </div>
                    </div>
-           </div>
+               </div>
+
+<!--               <div id="w3lssbmincart" class="modal fade">-->
+<!--                   <form method="post">-->
+<!--                       <button type="button" class="sbmincart-closer">&times;</button>-->
+<!--                       <ul>-->
+<!--                           <li class="sbmincart-item">-->
+<!--                               <div class="sbmincart-details-name">-->
+<!--                                   <ul class="sbmincart-attributes">-->
+<!--                                   </ul>-->
+<!--                               </div>-->
+<!--                               <div class="sbmincart-details-quantity">-->
+<!--                                   <input class="sbmincart-quantity" data-sbmincart-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity")>-->
+<!--                               </div>-->
+<!--                               <div class="sbmincart-details-remove">-->
+<!--                                   <button type="button" class="sbmincart-remove" data-sbmincart-idx="<%= i %>">&times;</button>-->
+<!--                               </div>-->
+<!--                               <div class="sbmincart-details-price">-->
+<!--                                   <span class="sbmincart-price"></span>-->
+<!--                               </div>-->
+<!--                               <input type="hidden" name="w3ls_item_<%= idx %>" value="<%= items[i].get("w3ls_item") %>" />-->
+<!--                               <input type="hidden" name="amount_<%= idx %>" value="<%= items[i].amount() %>" />-->
+<!--                               <input type="hidden" name="shipping_<%= idx %>" value="<%= items[i].get("shipping") %>" />-->
+<!--                               <input type="hidden" name="shipping2_<%= idx %>" value="<%= items[i].get("shipping2") %>" />-->
+<!--                           </li>-->
+<!--                       </ul>-->
+<!--                       <div class="sbmincart-footer">-->
+<!--                           <div class="sbmincart-subtotal">-->
+<!---->
+<!--                           </div>-->
+<!--                           <button class="sbmincart-submit" type="submit" data-sbmincart-alt="<%= config.strings.buttonAlt %>"></button>-->
+<!--                       </div>-->
+<!--                       <input type="hidden" name="cmd" value="_cart" />-->
+<!--                       <input type="hidden" name="upload" value="1" />-->
+<!--                       <input type="hidden" name="<%= key %>" value="<%= settings[key] %>" />-->
+<!--                   </form>-->
+<!--               </div>-->
+
        </div>
 <!-- //header -->
 <!-- navigation -->
@@ -216,12 +272,7 @@ ThemesAsset::register($this);
 <!--    </div>-->
 <!--</div>-->
 <!-- //newsletter -->
-
-<!--<div style="background: greenyellow">-->
-<!--    --><?php //$elements = yii::$app->cart->elements;; ?>
-<!--    --><?//= $this->render('@vendor/dvizh/yii2-cart/src/views/default/index', compact('elements')) ?>
-<!--</div>-->
-
+<!--        --><?//= \dvizh\cart\widgets\ElementsList::widget() ; ?>
 
 
     <?= $content ?>
@@ -282,7 +333,7 @@ ThemesAsset::register($this);
     <div class="footer-copy">
         <div class="footer-copy1">
             <div class="footer-copy-pos">
-                <a href="#home1" class="scroll"><img src="images/arrow.png" alt=" " class="img-responsive" /></a>
+                <a href="#home1" class="scroll"><img src="/images/arrow.png" alt=" " class="img-responsive" /></a>
             </div>
         </div>
         <div class="container">

@@ -37,14 +37,18 @@ class CategoryController extends AppController
 
     public function actionIndex()
     {
-//        $id = Yii::$app->request->get('id');
-//
-//        $searchModel = new CategorySearch();
-//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $id = Yii::$app->request->get('id');
 
-//        return $this->render('index', compact('searchModel', 'dataProvider', 'id'));
+        $searchModel = new CategorySearch();
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => Product::Find()->where(['category_id' => 4]),
+            'pagination' => [
+                'pageSize' => 3,
+            ],
+        ]);
+        return $this->render('index', compact('searchModel', 'dataProvider', 'id'));
 
-        return $this->render('index');
+//        return $this->render('index');
     }
 
     public function actionView($id)
@@ -66,7 +70,7 @@ class CategoryController extends AppController
     protected function findModel($id)
     {
         $model = new Category;
-        
+
         if (($model = $model::findOne($id)) !== null) {
             return $model;
         } else {
@@ -77,7 +81,7 @@ class CategoryController extends AppController
     protected function findModelBySlug($slug)
     {
         $model = new Category;
-        
+
         if (($model = $model::findOne(['slug' => $slug])) !== null) {
             return $model;
         } else {

@@ -48,7 +48,8 @@ return [
             'rules' => [
 				'/' => 'site/index',
 //				'<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
-                'category/<id:\d+>' => 'category/view'
+                'category/<id:\d+>' => 'category/view',
+                'product/<id:\d+>' => 'product/view',
             ],
         ],
 		'i18n' => [

@@ -11,12 +11,12 @@ use yii\web\AssetBundle;
      public $css = [
 //         'css/bootstrap.css',
          'css/style.css',
-         'css/font-awesome.css',
+//         'css/font-awesome.css',
          'css/flexslider.css',
          'css/jquery.countdown.css',
          'css/fasthover.css',
          'css/popuo-box.css',
-         'css/',
+//         'css/',
 
      ];
      public $js = [
@@ -29,7 +29,7 @@ use yii\web\AssetBundle;
          'js/jquery.flexslider.js',
          'js/jquery.magnific-popup.js',
          'js/jquery.wmuSlider.js',
-         'js/minicart.js',
+//         'js/minicart.js',
          'js/script.js',
      ];
      public $depends = [

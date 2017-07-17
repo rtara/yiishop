@@ -19,7 +19,7 @@ use dvizh\cart\widgets\BuyButton;
     <div class="panel-footer">
         <div class="caption">
             <?php /* iterl_todo : insert url to view individual item card */ ?>
-            <div><h5><?= Html::a($model->name, ['#'] )?></h5></div>
+            <div><h5><?= Html::a($model->name, ['product/view', 'id' => $model->id] )?></h5></div>
         </div>
         <div class="simpleCart_shelfItem">
             <p>
