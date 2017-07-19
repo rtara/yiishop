@@ -47,7 +47,7 @@
         }
 
         $(imagezoomView.selector).css({
-          'position':'absolute',
+          'position':'fixed',
           'left': zoomViewPositionX,
           'top': offset.top,
           'width': cursorSize[0]*settings.magnification,

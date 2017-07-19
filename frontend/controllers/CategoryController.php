@@ -11,7 +11,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-class CategoryController extends Controller
+class CategoryController extends AppController
 {
     public function behaviors()
     {
@@ -37,26 +37,40 @@ class CategoryController extends Controller
 
     public function actionIndex()
     {
-//        $id = Yii::$app->request->get('id');
-//
-//        $searchModel = new CategorySearch();
-//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $id = Yii::$app->request->get('id');
 
-//        return $this->render('index', compact('searchModel', 'dataProvider', 'id'));
-        return $this->render('index');
+        $searchModel = new CategorySearch();
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => Product::Find()->where(['category_id' => 4]),
+            'pagination' => [
+                'pageSize' => 3,
+            ],
+        ]);
+        return $this->render('index', compact('searchModel', 'dataProvider', 'id'));
+
+//        return $this->render('index');
     }
 
     public function actionView($id)
     {
+        // iterl_todo : category model does not have keyword and description values
         $id = Yii::$app->request->get('id');
-        $products = Product::Find()->where(['category_id' => $id])->all();
-        return $this->render('view', compact('products', 'id'));
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => Product::Find()->where(['category_id' => $id]),
+            'pagination' => [
+                'pageSize' => 3,
+            ],
+        ]);
+        $category = Category::findOne($id);
+        $supCategory = Category::findOne(['id' => $category->parent_id]);
+        $this->setMeta($category->name);
+        return $this->render('view', compact( 'id', 'category', 'supCategory', 'dataProvider'));
     }
 
     protected function findModel($id)
     {
         $model = new Category;
-        
+
         if (($model = $model::findOne($id)) !== null) {
             return $model;
         } else {
@@ -67,7 +81,7 @@ class CategoryController extends Controller
     protected function findModelBySlug($slug)
     {
         $model = new Category;
-        
+
         if (($model = $model::findOne(['slug' => $slug])) !== null) {
             return $model;
         } else {
