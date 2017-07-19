@@ -11,7 +11,15 @@ return [
 			'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
         ],
     ],
-    'modules' => [
+        'modules' => [
+            'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+        ],
+
         'shop' => [
             'class' => 'dvizh\shop\Module',
             'adminRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],

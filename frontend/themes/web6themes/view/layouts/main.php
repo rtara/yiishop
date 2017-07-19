@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use common\models\LoginForm;
 use frontend\models\SignupForm;
-use frontend\models\User;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -16,11 +16,13 @@ use common\widgets\Alert;
 use dvizh\cart\widgets\CartInformer;
 use dvizh\shop\models\Category;
 use frontend\components\widgets\CategoryDropdown;
+use dektrium\user\models\User;
+use yii\authclient\OAuths;
 
 
 ThemesAsset::register($this);
-$model=new LoginForm();
-$model1=new SignupForm();
+
+$model=new SignupForm();
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $this->beginPage() ?>
@@ -78,22 +80,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <div class="site-login">
                                                  <div class="row">
                                                     <div class="col-lg-5">
-                                                        <?php $form = ActiveForm::begin(['id' => 'login-form', 'action' => ['/site/login']]); ?>
-
-                                                        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                                                        <?= $form->field($model, 'password')->passwordInput() ?>
-
-                                                        <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-                                                        <div style="color:#999;margin:1em 0">
-                                                            If you forgot your password you can <?= Html::a('reset it', ['/site/request-password-reset']) ?>.
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                                                        </div>
-                                                        <?php ActiveForm::end(); ?>
+                                                        <?php \dektrium\user\widgets\Login::begin()?>
+                                                        <?php \dektrium\user\widgets\Login::end()?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,18 +91,28 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
-                                            <?php $form = ActiveForm::begin(['id' => 'form-signup']);?>
-                                                <?= $form->field($model1,'username')->textInput(['autofocus' => true]) ?>
+                                            <?php $form = ActiveForm::begin([
+                                                'id' => 'registration-form',
+                                                //'enableAjaxValidation' => true,
+                                                'enableClientValidation' => false,
+                                            ]); ?>
 
-                                                <?= $form->field($model1, 'email')->textInput() ?>
+                                            <?= $form->field($model, 'email') ?>
 
-                                                <?= $form->field($model1, 'password')->passwordInput() ?>
-                                                <div class="sign-up">
-                                                    <div class="form-group">
-                                                        <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                                                    </div>
-                                                </div>
+                                            <?= $form->field($model, 'username') ?>
+
+                                            <?php if ($module->enableGeneratingPassword == false): ?>
+                                                <?= $form->field($model, 'password')->passwordInput() ?>
+                                            <?php endif ?>
+
+                                            <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']) ?>
+
                                             <?php ActiveForm::end(); ?>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">
+                                        <?= Html::a(Yii::t('user', 'Already registered? Sign in!'), ['/user/security/login']) ?>
+                                    </p>
                                         </div>
                                     </div>
                                 </div>
@@ -222,7 +220,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //$menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
                 } else {
                     $menuItems[] = '<li>'
-                        . Html::beginForm(['/site/logout'], 'post')
+                        . Html::beginForm(['/user/security/logout'], 'post')
                         . Html::submitButton(
                             'Logout (' . Yii::$app->user->identity->username . ')',
                             ['class' => 'btn btn-link logout']

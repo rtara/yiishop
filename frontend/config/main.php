@@ -21,7 +21,7 @@ return [
 			'class' => 'frontend\components\LangRequest'
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'dektrium\user\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -78,6 +78,7 @@ return [
         ],
     ],
     'modules' => [
+
         'cart' => [
             'class' => 'dvizh\cart\Module',
         ],

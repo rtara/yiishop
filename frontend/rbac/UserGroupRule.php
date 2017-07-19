@@ -26,4 +26,3 @@ class UserGroupRule extends Rule
 		return true;
 		} 
 	}
-}
