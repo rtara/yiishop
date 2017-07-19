@@ -284,7 +284,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         . Html::endForm()
                         . '</li>';
                     $menuItems[] = '<li>'
-                        . Html::beginForm(['/site/account'], 'post')
+                        . Html::beginForm(['/user/settings/profile'], 'post')
                         . Html::submitButton(
                             'Account',
                             ['class' => 'btn btn-link logout ']
