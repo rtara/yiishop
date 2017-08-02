@@ -102,9 +102,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                             <?= $form->field($model, 'username') ?>
 
-                                            <?php if ($module->enableGeneratingPassword == false): ?>
+                                            <?php //if ($module->enableGeneratingPassword == false): ?>
                                                 <?= $form->field($model, 'password')->passwordInput() ?>
-                                            <?php endif ?>
+                                            <?php //endif ?>
 
                                             <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']) ?>
 
