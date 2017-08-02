@@ -40,7 +40,8 @@
         "dvizh/yii2-shop": "*",
         "dvizh/yii2-cart": "*",
         "c006/yii2-migration-utility": "dev-master",
-        "kop/yii2-scroll-pager": "dev-master"
+        "kop/yii2-scroll-pager": "dev-master",
+        "dektrium/yii2-user": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
