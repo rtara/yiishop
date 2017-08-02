@@ -11,7 +11,7 @@ return [
 			'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
         ],
     ],
-        'modules' => [
+    'modules' => [
             'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
