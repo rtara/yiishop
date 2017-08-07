@@ -188,7 +188,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </form>
                 </div>
                    </div>
-                       <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal" style="overflow: inherit">
+                       <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal">
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                            <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
                        </button>
@@ -202,7 +202,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                <?= \dvizh\cart\widgets\ElementsList::widget(['elementView' => '@app/themes/web6themes/view/layouts/_cartRender.php']) ; ?>
                            </div>
                            <div class="modal-footer">
-                               <?= CartInformer::widget([]) ; ?>
+                               <button class="cart-button">
+                                   <a href="/cart">Go to cart</a>
+                               </button>
+                               <?= CartInformer::widget([]); ?>
                            </div>
                        </div>
                    </div>

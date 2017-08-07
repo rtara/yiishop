@@ -5239,3 +5239,24 @@ body {
     top: -12px;
 }
 
+.cart-button {
+    background: #ff5063;
+    border: none;
+    -o-border-radius: 7%;
+    -ms-border-radius: 7%;
+    -moz-border-radius: 7%;
+    -webkit-border-radius: 7%;
+    border-radius: 7%;
+    width: 97px;
+    height: 44px;
+    text-align: center;
+    outline: none;
+    /* position: fixed; */
+    z-index: 999;
+    float: left;
+}
+
+.cart-button a {
+    font-weight: 600;
+    color: aliceblue;
+}
