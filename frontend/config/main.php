@@ -21,13 +21,22 @@ return [
 			'class' => 'frontend\components\LangRequest'
         ],
         'user' => [
-            'identityClass' => 'dektrium\user\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+            
+            'as frontend' => 'dektrium\user\filters\FrontendFilter',
+            
+            'identityCookie' => [
+                'name' => '_identity-frontend',
+                'path'     => '/',
+                'httpOnly' => true],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+            //'name' => 'advanced-frontend',
+            'name' => 'FRONTENDSESSID',
+        'cookieParams' => [
+            'httpOnly' => true,
+            'path'     => '/',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
