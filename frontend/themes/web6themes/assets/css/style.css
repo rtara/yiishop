@@ -39,7 +39,7 @@ input[type="submit"],.panel-body ul li a,.checkout-right-basket a,.additional_in
 }
 .w3l_logo{
 	float:left;
-	margin-left:13em;
+    margin-left: 23em;
 }
 .w3l_logo h1 a{
 	font-size:1.1em;
@@ -189,7 +189,7 @@ a.simpleCart_empty {
     text-align: center;
     outline: none;
     position: fixed;
-    margin-left: 10px;
+    margin-left: 184px;
     margin-top: 10px;
     z-index: 999;
 }
@@ -3250,9 +3250,9 @@ td.invert-image a img {
 	.nbs-flexisel-item { 
 		padding: 0 10px; 
 	}
-	.w3view-cart { 
-		margin-top: -.3em;
-	}
+	.w3view-cart {
+        margin-top: 7px;
+    }
 	.w3l_logo h1 a {
 		font-size: .9em;
 	}
@@ -4150,7 +4150,7 @@ td.invert-image a img {
 		margin: 0.9em 0 0 0;
 	}
 	.w3view-cart {
-		margin-top: 1.3em;
+		margin-top: 74px;
 		right: 11%;
 	} 
 	.w3l_logo h1 a {
@@ -4966,7 +4966,7 @@ td.invert-image a img {
 		font-size: 1em;
 	}
 	.w3view-cart {
-		margin-top: 2.9em;
+		margin-top: 72px;
 		right: 6%;
 	}
 	.video-img {
@@ -5008,6 +5008,34 @@ td.invert-image a img {
     border-color: #afb2d9;
 }
 
+@media (min-width: 320px) {
+    .cart-qty-count {
+        right: 4%;
+        top: 13%;
+    }
+}
+
+@media (min-width: 375px) {
+    .cart-qty-count {
+        right: 9%;
+        top: 16%;
+    }
+}
+
+@media (min-width: 425px) {
+    .cart-qty-count {
+        right: 10%;
+        top: 16%;
+    }
+}
+
+/*@media (max-width: 640px) {*/
+    /*.cart-qty-count {*/
+        /*right: 4%;*/
+        /*top: 13%;*/
+    /*}*/
+/*}*/
+
 @media (min-width:768px){
     .row-eq-height {
         display: -webkit-box;
@@ -5037,6 +5065,10 @@ td.invert-image a img {
         bottom: 2%;
         left: 23%;
     }
+    .cart-qty-count {
+        right: 9%;
+        top: 6%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -5064,6 +5096,10 @@ td.invert-image a img {
         bottom: 10%;
         left: 29%;
     }
+    .cart-qty-count {
+        right: 9%;
+        top: 6%;
+    }
 }
 
 @media (min-width: 1140px) {
@@ -5077,7 +5113,10 @@ td.invert-image a img {
     }
     .item_single .dvizh-change-count {
         float: left;
-
+    }
+    .cart-qty-count {
+        right: 135px;
+        top: 33px;
     }
 }
 
@@ -5216,7 +5255,5 @@ body {
     padding: 3px;
     color: #ffffff;
     z-index: 9999;
-    right: 17%;
-    top: 4%;
 }
 

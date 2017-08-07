@@ -163,14 +163,14 @@ $this->params['breadcrumbs'][] = $this->title;
                    //    );
                    //?>
                </div>
-                   <div id="google_translate_element">
-                       <script type="text/javascript">
-                           function googleTranslateElementInit() {
-                               new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-                           }
-                       </script>
-                       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                   </div>
+<!--                   <div id="google_translate_element">-->
+<!--                       <script type="text/javascript">-->
+<!--                           function googleTranslateElementInit() {-->
+<!--                               new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');-->
+<!--                           }-->
+<!--                       </script>-->
+<!--                       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+<!--                   </div>-->
                    <div class="w3l_logo">
                        <h1>
                            <a href="index.php">Electronic Store<span>Your stores. Your place.</span>
