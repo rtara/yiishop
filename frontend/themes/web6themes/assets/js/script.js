@@ -1,41 +1,48 @@
+$(document).ready(function () {
 
-$(document).ready(function(){
 
+    /* ---- Countdown timer ---- */
 
-	/* ---- Countdown timer ---- */
-
-	$('#counter').countdown({
-     timestamp : (new Date()).getTime() + 11*24*60*60*1000
-     });
+    $('#counter').countdown({
+        timestamp: (new Date()).getTime() + 11 * 24 * 60 * 60 * 1000
+    });
 
 
     //$('#myModal88').modal('show');
 
 
-	/* ---- Animations ---- */
+    /* ---- Animations ---- */
 
-	$('#links a').hover(
-		function(){ $(this).animate({ left: 3 }, 'fast'); },
-		function(){ $(this).animate({ left: 0 }, 'fast'); }
-	);
+    $('#links a').hover(
+        function () {
+            $(this).animate({left: 3}, 'fast');
+        },
+        function () {
+            $(this).animate({left: 0}, 'fast');
+        }
+    );
 
-    $(".scroll").click(function(event){
+    $(".scroll").click(function (event) {
         event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
     });
 
     $('.example1').wmuSlider();
-	$('footer a').hover(
-		function(){ $(this).animate({ top: 3 }, 'fast'); },
-		function(){ $(this).animate({ top: 0 }, 'fast'); }
-	);
+    $('footer a').hover(
+        function () {
+            $(this).animate({top: 3}, 'fast');
+        },
+        function () {
+            $(this).animate({top: 0}, 'fast');
+        }
+    );
 
 
-	$('#horizontalTab').easyResponsiveTabs({
-            type: 'default', //Types: default, vertical, accordion
-            width: 'auto', //auto or any width like 600px
-            fit: true   // 100% fit in a container
-        });
+    $('#horizontalTab').easyResponsiveTabs({
+        type: 'default', //Types: default, vertical, accordion
+        width: 'auto', //auto or any width like 600px
+        fit: true   // 100% fit in a container
+    });
 
     $('.popup-with-zoom-anim').magnificPopup({
         type: 'inline',
@@ -58,32 +65,23 @@ $(document).ready(function(){
         enableResponsiveBreakpoints: true,
         responsiveBreakpoints: {
             portrait: {
-                changePoint:480,
+                changePoint: 480,
                 visibleItems: 1
             },
             landscape: {
-                changePoint:640,
-                visibleItems:2
+                changePoint: 640,
+                visibleItems: 2
             },
             tablet: {
-                changePoint:768,
+                changePoint: 768,
                 visibleItems: 3
             }
         }
     });
 
-    if ($('.cart-qty-count').text() == '0'){
+    if ($('.cart-qty-count').text() == '0') {
         $('.cart-qty').css("display", "none");
     }
-
-    $('.dvizh-cart-delete-button').click( function () {
-        console.log('dgfdgdsfgsdgdf');
-        alert($('.cart-qty-count').text());
-        if ($('.cart-qty-count').text() == '0') {
-            $('.cart-qty').css("display", "none");
-
-        }
-    });
 
 
     // w3ls.render();
@@ -100,13 +98,21 @@ $(document).ready(function(){
     // });
 
 
-    $('.dvizh-cart-buy-button').click( function () {
-        if ($('.cart-qty-count').text() >= '0'){
+    $('.dvizh-cart-buy-button').click(function () {
+        if ($('.cart-qty-count').text() >= '0') {
             $('.cart-qty').css("display", "block");
         }
     });
 
-	 
+    $('.dvizh-cart-delete-button').click( function () {
+        console.log('dgfdgdsfgsdgdf');
+        alert($('.cart-qty-count').text());
+        if ($('.cart-qty-count').text() === '0') {
+            $('.cart-qty').css("display", "none");
+
+        }
+    });
+
+});
 
 
-}); (jQuery)

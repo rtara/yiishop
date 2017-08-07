@@ -8,11 +8,11 @@ return [
         ],
 		'authManager' => [
             'class' => 'yii\rbac\PhpManager',
-			'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
+            'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
         ],
     ],
-        'modules' => [
-            'user' => [
+    'modules' => [
+        'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,

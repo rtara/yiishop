@@ -113,6 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     
                                                     <?php endif ?>
 
+
                                                     <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'register input']) ?>
 
                                                     <?php ActiveForm::end(); ?>
@@ -187,19 +188,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     </form>
                 </div>
                    </div>
-<!--                   <div class="cart cart box_1">-->
-<!--                   <form action="#" method="post" class="last">-->
-<!--                       <input type="hidden" name="cmd" value="_cart" />-->
-<!--                       <input type="hidden" name="display" value="1" />-->
                        <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal">
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                        </button>
+        
                         <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
-<!--                   </form>-->
-<!--                   </div>-->
-
-<!--               <button id="foo" data-toggle="modal" data-target="#cart-modal">foooooo</button>-->
-
+        
                <div id="cart-modal" class="modal" role="dialog">
                    <div class="modal-dialog">
                        <div class="modal-content">
@@ -215,42 +209,6 @@ $this->params['breadcrumbs'][] = $this->title;
                        </div>
                    </div>
                </div>
-
-<!--               <div id="w3lssbmincart" class="modal fade">-->
-<!--                   <form method="post">-->
-<!--                       <button type="button" class="sbmincart-closer">&times;</button>-->
-<!--                       <ul>-->
-<!--                           <li class="sbmincart-item">-->
-<!--                               <div class="sbmincart-details-name">-->
-<!--                                   <ul class="sbmincart-attributes">-->
-<!--                                   </ul>-->
-<!--                               </div>-->
-<!--                               <div class="sbmincart-details-quantity">-->
-<!--                                   <input class="sbmincart-quantity" data-sbmincart-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity")>-->
-<!--                               </div>-->
-<!--                               <div class="sbmincart-details-remove">-->
-<!--                                   <button type="button" class="sbmincart-remove" data-sbmincart-idx="<%= i %>">&times;</button>-->
-<!--                               </div>-->
-<!--                               <div class="sbmincart-details-price">-->
-<!--                                   <span class="sbmincart-price"></span>-->
-<!--                               </div>-->
-<!--                               <input type="hidden" name="w3ls_item_<%= idx %>" value="<%= items[i].get("w3ls_item") %>" />-->
-<!--                               <input type="hidden" name="amount_<%= idx %>" value="<%= items[i].amount() %>" />-->
-<!--                               <input type="hidden" name="shipping_<%= idx %>" value="<%= items[i].get("shipping") %>" />-->
-<!--                               <input type="hidden" name="shipping2_<%= idx %>" value="<%= items[i].get("shipping2") %>" />-->
-<!--                           </li>-->
-<!--                       </ul>-->
-<!--                       <div class="sbmincart-footer">-->
-<!--                           <div class="sbmincart-subtotal">-->
-<!---->
-<!--                           </div>-->
-<!--                           <button class="sbmincart-submit" type="submit" data-sbmincart-alt="<%= config.strings.buttonAlt %>"></button>-->
-<!--                       </div>-->
-<!--                       <input type="hidden" name="cmd" value="_cart" />-->
-<!--                       <input type="hidden" name="upload" value="1" />-->
-<!--                       <input type="hidden" name="<%= key %>" value="<%= settings[key] %>" />-->
-<!--                   </form>-->
-<!--               </div>-->
     </div>
 </div>
 <!-- //header -->
