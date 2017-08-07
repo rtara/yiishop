@@ -162,14 +162,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </a>
         </div>
-        <div id="google_translate_element">
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-                    }
-            </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        </div>
+<!--        <div id="google_translate_element">-->
+<!--            <script type="text/javascript">-->
+<!--                function googleTranslateElementInit() {-->
+<!--                    new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');-->
+<!--                    }-->
+<!--            </script>-->
+<!--            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+<!--        </div>-->
         <div class="w3l_logo">
             <h1>
                 <a href="index.php">Electronic Store<span>Your stores. Your place.</span>
@@ -188,12 +188,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     </form>
                 </div>
                    </div>
-                       <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal">
+                       <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal" style="overflow: inherit">
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                           <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
                        </button>
-
-                        <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
-
                <div id="cart-modal" class="modal" role="dialog">
                    <div class="modal-dialog">
                        <div class="modal-content">

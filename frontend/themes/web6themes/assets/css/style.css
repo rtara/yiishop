@@ -192,6 +192,7 @@ a.simpleCart_empty {
     margin-left: 184px;
     margin-top: 10px;
     z-index: 999;
+    /*overflow: initial;*/
 }
 .w3view-cart i.fa {
     font-size: 1.8em;
@@ -5008,27 +5009,6 @@ td.invert-image a img {
     border-color: #afb2d9;
 }
 
-@media (min-width: 320px) {
-    .cart-qty-count {
-        right: 4%;
-        top: 13%;
-    }
-}
-
-@media (min-width: 375px) {
-    .cart-qty-count {
-        right: 9%;
-        top: 16%;
-    }
-}
-
-@media (min-width: 425px) {
-    .cart-qty-count {
-        right: 10%;
-        top: 16%;
-    }
-}
-
 /*@media (max-width: 640px) {*/
     /*.cart-qty-count {*/
         /*right: 4%;*/
@@ -5065,10 +5045,10 @@ td.invert-image a img {
         bottom: 2%;
         left: 23%;
     }
-    .cart-qty-count {
-        right: 9%;
-        top: 6%;
-    }
+    /*.cart-qty-count {*/
+        /*right: 9%;*/
+        /*top: 6%;*/
+    /*}*/
 }
 
 @media (min-width: 1024px) {
@@ -5096,10 +5076,10 @@ td.invert-image a img {
         bottom: 10%;
         left: 29%;
     }
-    .cart-qty-count {
-        right: 9%;
-        top: 6%;
-    }
+    /*.cart-qty-count {*/
+        /*right: 9%;*/
+        /*top: 6%;*/
+    /*}*/
 }
 
 @media (min-width: 1140px) {
@@ -5114,10 +5094,10 @@ td.invert-image a img {
     .item_single .dvizh-change-count {
         float: left;
     }
-    .cart-qty-count {
-        right: 135px;
-        top: 33px;
-    }
+    /*.cart-qty-count {*/
+        /*right: 135px;*/
+        /*top: 33px;*/
+    /*}*/
 }
 
 .panel {
@@ -5247,7 +5227,7 @@ body {
 /*}*/
 
 .cart-qty-count {
-    position: fixed;
+    position: absolute;
     background-color: rgb(253, 148, 159);
     border-radius: 21px;
     font-size: 14px;
@@ -5255,5 +5235,7 @@ body {
     padding: 3px;
     color: #ffffff;
     z-index: 9999;
+    right: -6px;
+    top: -12px;
 }
 
