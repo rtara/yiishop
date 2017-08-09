@@ -129,22 +129,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             </div>
                         </div>
+                        <div id="OR" class="hidden-xs">OR</div>
                     </div>
-                </div>
-            <div id="OR" class="hidden-xs">OR</div>
-            </div>
-            <div class="col-md-4 modal_body_right modal_body_right1">
-                <div class="row text-center sign-with">
-                    <div class="col-md-12">
-                        <h3 class="other-nw">Sign in with</h3>
-                    </div>
-                    <div class="col-md-12">
-                        <ul class="social">
-                            <li class="social_facebook"><a href="" class="entypo-facebook"></a></li>
-                            <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
-                            <li class="social_twitter"><a href="https://twitter.com" class="entypo-twitter"></a></li>
-                            <li class="social_behance"><a href="https://pinterest.com" class="entypo-behance"></a></li>
-                        </ul>
+                    <div class="col-md-4 modal_body_right modal_body_right1">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3 class="other-nw">Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <ul class="social">
+                                    <li class="social_facebook"><a href="" class="entypo-facebook"></a></li>
+                                    <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
+                                    <li class="social_twitter"><a href="https://twitter.com" class="entypo-twitter"></a></li>
+                                    <li class="social_behance"><a href="https://pinterest.com" class="entypo-behance"></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
