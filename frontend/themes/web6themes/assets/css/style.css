@@ -5251,7 +5251,6 @@ body {
     height: 44px;
     text-align: center;
     outline: none;
-    /* position: fixed; */
     z-index: 999;
     float: left;
 }
