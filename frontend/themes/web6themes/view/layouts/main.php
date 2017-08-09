@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </head>
 
 <body>
-
+    
 <?php $this->beginBody() ?>
 <!-- header modal -->
 <div class="modal fade" id="myModal88" tabindex="-1" role="dialog" aria-labelledby="myModal88"
