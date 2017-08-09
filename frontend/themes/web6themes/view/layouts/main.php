@@ -89,8 +89,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
-                                        <div class="register">                                    
-    
+                                        <div class="register">
+
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
@@ -108,9 +108,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     <?= $form->field($model, 'username') ?>
 
                                                     <?php if ($module->enableGeneratingPassword == false): ?>
-                                                    
+
                                                     <?= $form->field($model, 'password')->passwordInput() ?>
-                                                    
+
                                                     <?php endif ?>
 
 
@@ -120,9 +120,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 </div>
                                             </div>
                                             <p class="text-center">
-                                                
+
                                                 <?= Html::a(Yii::t('user', 'Already registered? Sign in!'), ['/user/security/login']) ?>
-                                                
+
                                             </p>
                                         </div>
                                     </div>
@@ -138,9 +138,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="col-md-12">
                         <h3 class="other-nw">Sign in with</h3>
                     </div>
-                    <div class="col-md-12">                                
-                        <ul class="social">                                    
-                            <li class="social_facebook"><a href="" class="entypo-facebook"></a></li>                                    
+                    <div class="col-md-12">
+                        <ul class="social">
+                            <li class="social_facebook"><a href="" class="entypo-facebook"></a></li>
                             <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
                             <li class="social_twitter"><a href="https://twitter.com" class="entypo-twitter"></a></li>
                             <li class="social_behance"><a href="https://pinterest.com" class="entypo-behance"></a></li>
@@ -150,7 +150,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-</div>    
+</div>
 
 <!-- header modal -->
 <!-- header -->
@@ -161,15 +161,15 @@ $this->params['breadcrumbs'][] = $this->title;
             <a href="#" data-toggle="modal" data-target="#myModal88">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </a>
-        </div>        
-        <div id="google_translate_element">
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-                    }
-            </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </div>
+<!--        <div id="google_translate_element">-->
+<!--            <script type="text/javascript">-->
+<!--                function googleTranslateElementInit() {-->
+<!--                    new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');-->
+<!--                    }-->
+<!--            </script>-->
+<!--            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+<!--        </div>-->
         <div class="w3l_logo">
             <h1>
                 <a href="index.php">Electronic Store<span>Your stores. Your place.</span>
@@ -190,10 +190,8 @@ $this->params['breadcrumbs'][] = $this->title;
                    </div>
                        <button class="w3view-cart" data-toggle="modal" data-target="#cart-modal">
                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                           <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
                        </button>
-        
-                        <?= \frontend\components\widgets\CartQuantity::widget([]) ; ?>
-        
                <div id="cart-modal" class="modal" role="dialog">
                    <div class="modal-dialog">
                        <div class="modal-content">
@@ -204,7 +202,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                <?= \dvizh\cart\widgets\ElementsList::widget(['elementView' => '@app/themes/web6themes/view/layouts/_cartRender.php']) ; ?>
                            </div>
                            <div class="modal-footer">
-                               <?= CartInformer::widget([]) ; ?>
+                               <button class="cart-button">
+                                   <a href="/cart">Go to cart</a>
+                               </button>
+                               <?= CartInformer::widget([]); ?>
                            </div>
                        </div>
                    </div>
