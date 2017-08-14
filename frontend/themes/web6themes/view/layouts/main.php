@@ -203,7 +203,7 @@ $this->params['breadcrumbs'][] = $this->title;
                            </div>
                            <div class="modal-footer">
                                <button class="cart-button">
-                                   <a href="/cart">Go to cart</a>
+                                   <a href="/cartview">Go to cart</a>
                                </button>
                                <?= CartInformer::widget([]); ?>
                            </div>

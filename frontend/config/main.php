@@ -93,5 +93,11 @@ return [
             'class' => 'dvizh\cart\Module',
         ],
         'params' => $params,
+        'order' => [
+            'class' => 'dvizh\order\Module',
+            'layoutPath' => 'frontend\views\layouts',
+            'successUrl' => '/page/thanks', //Страница, куда попадает пользователь после успешного заказа
+            'adminNotificationEmail' => 'test@yandex.ru', //Мыло для отправки заказов
+        ],
     ],
 ];

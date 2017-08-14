@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0988b92d17f8a44f3f81ac14fd0a2ab",
+    "content-hash": "91624ba4b4c54116fa83f6de7f3d7a26",
     "packages": [
         {
             "name": "2amigos/yii2-dosamigos-asset-bundle",
@@ -474,6 +474,52 @@
             ]
         },
         {
+            "name": "bower-asset/eonasdan-bootstrap-datetimepicker",
+            "version": "4.17.47",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Eonasdan/bootstrap-datetimepicker.git",
+                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Eonasdan/bootstrap-datetimepicker/zipball/25c11d79e614bc6463a87c3dd9cbf8280422e006",
+                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8.3",
+                "bower-asset/moment": ">=2.10.5"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "build/css/bootstrap-datetimepicker.min.css",
+                    "build/js/bootstrap-datetimepicker.min.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ],
+                "bower-asset-private": false
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "bootstrap3 datetimepicker",
+            "keywords": [
+                "bootstrap",
+                "datepicker",
+                "datetimepicker",
+                "moment",
+                "timepicker",
+                "twitter-bootstrap"
+            ]
+        },
+        {
             "name": "bower-asset/fancybox",
             "version": "v2.1.5",
             "source": {
@@ -681,6 +727,49 @@
                 ],
                 "bower-asset-ignore": []
             }
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378",
+                "reference": "b8a7fc310eb3625e83fc0c8f1ea2840fa83c7378",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json",
+                    "ISSUE_TEMPLATE.md",
+                    "typing-tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-03-21 22:54:37"
         },
         {
             "name": "bower-asset/punycode",
@@ -1146,6 +1235,67 @@
             "time": "2017-06-09 05:09:03"
         },
         {
+            "name": "dvizh/yii2-order",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-order.git",
+                "reference": "d64fb69245c456021ebe1be338acdb470781f34b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-order/zipball/d64fb69245c456021ebe1be338acdb470781f34b",
+                "reference": "d64fb69245c456021ebe1be338acdb470781f34b",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-grid-view-library": "*",
+                "kartik-v/yii2-export": "@dev",
+                "kartik-v/yii2-grid": "*",
+                "kartik-v/yii2-mpdf": "dev-master",
+                "nex/yii2-datepicker": "*",
+                "php": ">=5.4.0",
+                "udokmeci/yii2-phone-validator": "~1.0.1",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "require-dev": {
+                "yiisoft/yii2-debug": "*",
+                "yiisoft/yii2-gii": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dvizh\\order\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\order\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "yii2-order it's a module for site cart order",
+            "homepage": "https://github.com/dvizh/yii2-cart",
+            "keywords": [
+                "application",
+                "dvizh",
+                "module",
+                "order",
+                "shop",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-08-08 14:17:30"
+        },
+        {
             "name": "dvizh/yii2-promocode",
             "version": "dev-master",
             "source": {
@@ -1497,6 +1647,117 @@
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
             "time": "2016-07-18T04:51:16+00:00"
+        },
+        {
+            "name": "giggsey/libphonenumber-for-php",
+            "version": "7.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giggsey/libphonenumber-for-php.git",
+                "reference": "7137cef7f295d225aec2a290f6829c1c71a1ffb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/7137cef7f295d225aec2a290f6829c1c71a1ffb0",
+                "reference": "7137cef7f295d225aec2a290f6829c1c71a1ffb0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "giggsey/locale": "^1.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "^1.0",
+                "pear/versioncontrol_git": "dev-master",
+                "phing/phing": "^2.7",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "satooshi/php-coveralls": "^1.0",
+                "symfony/console": "^2.8|^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "libphonenumber": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Gigg",
+                    "email": "giggsey@gmail.com",
+                    "homepage": "http://giggsey.com/"
+                }
+            ],
+            "description": "PHP Port of Google's libphonenumber",
+            "homepage": "https://github.com/giggsey/libphonenumber-for-php",
+            "keywords": [
+                "geocoding",
+                "geolocation",
+                "libphonenumber",
+                "mobile",
+                "phonenumber",
+                "validation"
+            ],
+            "time": "2016-11-23T15:39:02+00:00"
+        },
+        {
+            "name": "giggsey/locale",
+            "version": "1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giggsey/Locale.git",
+                "reference": "e6eb1883c1452df7734a03fb183a2ec5175c16f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giggsey/Locale/zipball/e6eb1883c1452df7734a03fb183a2ec5175c16f2",
+                "reference": "e6eb1883c1452df7734a03fb183a2ec5175c16f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "^1.0",
+                "pear/versioncontrol_git": "dev-master",
+                "phing/phing": "~2.7",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "satooshi/php-coveralls": "^1.0",
+                "symfony/console": "^2.8|^3.0",
+                "symfony/filesystem": "^2.8|^3.0",
+                "symfony/finder": "^2.8|^3.0",
+                "symfony/process": "^2.8|^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giggsey\\Locale\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Gigg",
+                    "email": "giggsey@gmail.com",
+                    "homepage": "http://giggsey.com/"
+                }
+            ],
+            "description": "Locale functions required by libphonenumber-for-php",
+            "time": "2017-04-07T18:45:42+00:00"
         },
         {
             "name": "google/auth",
@@ -2783,6 +3044,55 @@
             "time": "2017-03-29 03:56:27"
         },
         {
+            "name": "nex/yii2-datepicker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RomeroMsk/yii2-datepicker.git",
+                "reference": "533fb58f56200c69c59fb5db3ebaf94d3d68cc07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RomeroMsk/yii2-datepicker/zipball/533fb58f56200c69c59fb5db3ebaf94d3d68cc07",
+                "reference": "533fb58f56200c69c59fb5db3ebaf94d3d68cc07",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/eonasdan-bootstrap-datetimepicker": "4.17.*",
+                "bower-asset/moment": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "nex\\datepicker\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Ovchinnikov",
+                    "email": "nex.software@gmail.com",
+                    "homepage": "https://github.com/RomeroMsk"
+                }
+            ],
+            "description": "Bootstrap 3 Date/time picker widget for Yii2",
+            "homepage": "https://github.com/RomeroMsk/yii2-datepicker",
+            "keywords": [
+                "DateTimePicker",
+                "bootstrap",
+                "datepicker",
+                "extension",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-07-24 05:04:47"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v2.0.10",
             "source": {
@@ -3415,6 +3725,52 @@
             ],
             "description": "Yii2 file upload and storage kit",
             "time": "2017-01-16T10:32:27+00:00"
+        },
+        {
+            "name": "udokmeci/yii2-phone-validator",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/udokmeci/yii2-phone-validator.git",
+                "reference": "290f9ada8a774946a5f9693741460297889ef1cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/udokmeci/yii2-phone-validator/zipball/290f9ada8a774946a5f9693741460297889ef1cf",
+                "reference": "290f9ada8a774946a5f9693741460297889ef1cf",
+                "shasum": ""
+            },
+            "require": {
+                "giggsey/libphonenumber-for-php": "~7.0",
+                "php": ">=5.3.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "validator",
+            "autoload": {
+                "psr-0": {
+                    "udokmeci\\yii2PhoneValidator": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Uğur DÖKMECİ",
+                    "email": "ugurdokmeci@gmail.com",
+                    "homepage": "https://github.com/udokmeci/yii2-phone-validator",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 Phone validator wrapper on top of PhoneNumberUtil library also used by Android devices",
+            "homepage": "https://github.com/udokmeci/yii2-beanstalk",
+            "keywords": [
+                "phone number",
+                "phone number validator",
+                "yii2"
+            ],
+            "time": "2016-06-14T06:07:38+00:00"
         },
         {
             "name": "voskobovich/yii2-many-many-behavior",
@@ -4373,7 +4729,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-07-19T13:05:01+00:00"
+            "time": "2017-07-19 13:05:01"
         },
         {
             "name": "myclabs/deep-copy",
@@ -4764,7 +5120,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-07-19T07:44:25+00:00"
+            "time": "2017-07-19 07:44:25"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -6342,7 +6698,8 @@
         "kartik-v/yii2-mpdf": 20,
         "trntv/yii2-file-kit": 0,
         "c006/yii2-migration-utility": 20,
-        "kop/yii2-scroll-pager": 20
+        "kop/yii2-scroll-pager": 20,
+        "dvizh/yii2-order": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

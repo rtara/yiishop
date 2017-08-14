@@ -57,6 +57,11 @@ return [
         'utility' => [
             'class' => 'c006\utility\migration\Module',
         ],
+        'order' => [
+            'class' => 'dvizh\order\Module',
+            //...
+            'as order_filling' => '\common\aspects\OrderFilling',
+        ],
     ],
 	
 ];
