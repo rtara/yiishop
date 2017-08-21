@@ -16,6 +16,7 @@ use frontend\components\widgets\CategoryDropdown;
 use dektrium\user\widgets\Login;
 use dektrium\user\models\RegistrationForm;
 use yii\authclient\OAuths;
+use yii\authclient\widgets\AuthChoice;
 
 
 
@@ -76,24 +77,19 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </ul>
                                 <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                     <div class="facts">
-                                        <div class="register">
-                                            <div class="site-login">
-                                                 <div class="row">
-                                                    <div class="col-lg-5">
-                                                        <?= Login::widget() ?>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="register">                           
+                                                                                                    
+                                            <?= Login::widget() ?>                                                  
+                                               
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
-
-                                            <div class="panel panel-default">
+                                            
                                                 <div class="panel-heading">
-                                                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+                                                    <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     <?php $form = ActiveForm::begin([
@@ -114,11 +110,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     <?php endif ?>
 
 
-                                                    <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'register input']) ?>
+                                                    <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']) ?>
 
                                                     <?php ActiveForm::end(); ?>
                                                 </div>
-                                            </div>
+                                            
                                             <p class="text-center">
 
                                                 <?= Html::a(Yii::t('user', 'Already registered? Sign in!'), ['/user/security/login']) ?>
@@ -137,12 +133,17 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <h3 class="other-nw">Sign in with</h3>
                             </div>
                             <div class="col-md-12">
-                                <ul class="social">
+                                 <?= AuthChoice::widget([
+     'baseAuthUrl' => ['site/auth']
+])
+?>
+<!--                                <ul class="social">
+                                   
                                     <li class="social_facebook"><a href="" class="entypo-facebook"></a></li>
-                                    <li class="social_dribbble"><a href="https://accounts.google.com" class="entypo-dribbble"></a></li>
+                                    <li class="social_dribbble"></li>
                                     <li class="social_twitter"><a href="https://twitter.com" class="entypo-twitter"></a></li>
                                     <li class="social_behance"><a href="https://pinterest.com" class="entypo-behance"></a></li>
-                                </ul>
+                                </ul>-->
                             </div>
                         </div>
                     </div>
