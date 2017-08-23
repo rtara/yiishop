@@ -60,6 +60,10 @@ class SiteController extends AppController
     public function actions()
     {
         return [
+            'auth' => [
+      'class' => 'yii\authclient\AuthAction',
+      'successCallback' => [$this, 'oAuthSuccess'],
+    ],
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
@@ -69,6 +73,12 @@ class SiteController extends AppController
             ],
         ];
     }
+    public function oAuthSuccess($client) {
+  // get user data from client
+  $userAttributes = $client->getUserAttributes();
+
+  // do some thing with user data. for example with $userAttributes['email']
+}
 
     /**
      * Displays homepage.

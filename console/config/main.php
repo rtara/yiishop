@@ -17,11 +17,16 @@ return [
             'namespace' => 'common\fixtures',
           ],
     ],
+    'modules' => [
+    
+    'rbac' => 'dektrium\rbac\RbacConsoleModule',
+    
+],
     'components' => [
-		'authManager' => [
-            'class' => 'yii\rbac\PhpManager',
-			'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
-        ],
+		//'authManager' => [
+            //'class' => 'yii\rbac\PhpManager',
+		//	'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
+        //],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

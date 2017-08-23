@@ -13,6 +13,28 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'authClientCollection' => [
+        'class' => yii\authclient\Collection::className(),
+        
+        
+        'clients' => [
+            'facebook' => [
+                'class'        => 'dektrium\user\clients\Facebook',
+                'clientId'     => '1519297754799896',
+                'clientSecret' => '38d3125c81ea4e6e780cb93e6ceb4595',
+            ],
+        'twitter' => [
+            'class'          => 'dektrium\user\clients\Twitter',
+            'consumerKey'    => 'CONSUMER_KEY',
+            'consumerSecret' => 'CONSUMER_SECRET',
+        ],
+        'google' => [
+            'class'        => 'dektrium\user\clients\Google',
+            'clientId'     => 'CLIENT_ID',
+            'clientSecret' => 'CLIENT_SECRET',
+        ],
+    ],
+],
 	    'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -88,11 +110,54 @@ return [
         ],
     ],
     'modules' => [
-
+        
+        'rbac' => 'dektrium\rbac\RbacWebModule',
+        
+        'user' => [
+            'class' => 'dektrium\user\Module',
+//            'enableUnconfirmedLogin' => true,
+//            'confirmWithin' => 21600,
+//            'cost' => 12,
+//            'urlRules' => [],
+//            'urlPrefix' => 'user',
+            'adminPermission' => true,
+            'admins' => ['kuzik'],
+//            'controllerMap' => [
+//                'admin' => [
+//                    'class' => 'dektrium\user\controllers\AdminController',
+//                    'as access' => [
+//                        'class' => 'yii\filters\AccessControl',
+//                        'rules' => [
+//                            [
+//                                'allow' => true,
+//                                'roles' => ['administrateUser'],
+//                            ],
+//                            [
+//                                'actions' => ['switch'],
+//                                'allow' => true,
+//                                'roles' => ['@'],
+//                            ],
+//                        ],
+//                    ],
+//                ],
+//            ],
+        ],
+//        
+//        'user' => [
+//                    'class' => 'dektrium\user\Module',
+//                    'enableUnconfirmedLogin' => true,
+//                    'confirmWithin' => 21600,
+//                    'cost' => 12,
+//                    'urlRules' => ['user'],
+//                    'urlPrefix' => user,
+//                    'admins' => ['admin'],
+//                    'adminPermission' => 'administrateUser'
+//         ],
         'cart' => [
             'class' => 'dvizh\cart\Module',
         ],
-        'params' => $params,
+        'params' => $params,   
+
         'order' => [
             'class' => 'dvizh\order\Module',
             'layoutPath' => 'frontend\views\layouts',
@@ -100,4 +165,8 @@ return [
             'adminNotificationEmail' => 'test@yandex.ru', //Мыло для отправки заказов
         ],
     ],
+        
+
 ];
+
+

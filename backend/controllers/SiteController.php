@@ -119,13 +119,29 @@ class SiteController extends Controller
     {
 		$id= Yii::$app->request->get('id',null);
 		$user = User::find()->where(['id' => $id]) ->one();
-		return $this->render('edituser',['user'=>$user]);
+		$username=Yii::$app->request->post('username',null);
+		$email=Yii::$app->request->post('email',null);
+		$group=Yii::$app->request->post('group',null);
+		$created_at=Yii::$app->request->post('created_at',null);
+		$password_hash=Yii::$app->request->post('password_hash',null);
+		if ($username and $username!=$user->username)
+			$user->username=$username;
+		if ($email and $email!=$user->email)
+			$user->email=$email;
+		if ($group and $group!=$user->group)
+			$user->group=$group;
+		if ($password_hash and $password_hash!=$user->password_hash)
+			$user->password_hash=$password_hash;
+		\Yii::$app->getSession()->setFlash('error', 'User '.$user->username.' has been updated');	
+		$user->save();
+		return $this->redirect(Yii::$app->request->referrer);
 	}
 	
 	public function actionDeleteuser()
 	{
 		$id= Yii::$app->request->get('id',null);
 		foreach (User::find()->where(['id' => $id])->all() as $user) {
+			\Yii::$app->getSession()->setFlash('error', 'User '.$user->username.' deleted');
 			$user->delete();
 		}
 		return $this->redirect(Yii::$app->request->referrer);

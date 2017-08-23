@@ -6,24 +6,46 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-		'authManager' => [
-            'class' => 'yii\rbac\PhpManager',
-            'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
-        ],
+		//'authManager' => [
+            //'class' => 'yii\rbac\PhpManager',
+            //'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
+       // ],
     ],
     'modules' => [
-        'user' => [
-            'class' => 'dektrium\user\Module',
-            'enableUnconfirmedLogin' => true,
-            'confirmWithin' => 21600,
-            'cost' => 12,
-            'admins' => ['admin']
-        ],
+//        'rbac' => 'dektrium\rbac\RbacWebModule',
+//        'user' => [
+//            'class' => 'dektrium\user\Module',
+//            'enableUnconfirmedLogin' => true,
+//            'confirmWithin' => 21600,
+//            'cost' => 12,
+//            'urlRules' => [],
+//            'urlPrefix' => 'user', 
+//            'admins' => ['kuzik'],
+//            'controllerMap' => [
+//                'admin' => [
+//                    'class' => 'dektrium\user\controllers\AdminController',
+//                    'as access' => [
+//                        'class' => 'yii\filters\AccessControl',
+//                        'rules' => [
+//                            [
+//                                'allow' => true,
+//                                'roles' => ['administrateUser'],
+//                            ],
+//                            [
+//                                'actions' => ['switch'],
+//                                'allow' => true,
+//                                'roles' => ['@'],
+//                            ],
+//                        ],
+//                    ],
+//                ],
+//            ],
+//        ],
 
         'shop' => [
             'class' => 'dvizh\shop\Module',
             'adminRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
-            //'defaultPriceType' => 1, //Цена по умолчанию]
+            'defaultPriceType' => 1, //Цена по умолчанию]
         ],
         'filter' => [
             'class' => 'dvizh\filter\Module',
