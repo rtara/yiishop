@@ -17,4 +17,11 @@ class CartviewController extends DefaultController
         return $this->render('@frontend/themes/web6themes/view/cartview/index',
             compact('elements'));
     }
+	public function actionPayment()
+    {
+        $elements = yii::$app->cart->elements;
+        return $this->render('@frontend/themes/web6themes/view/cartview/payment',
+            compact('elements'));
+    }
+	
 }
