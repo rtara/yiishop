@@ -13,15 +13,15 @@ return [
     'bootstrap' => ['log'],
     'modules' => [
         'user' => [
-        // following line will restrict access to profile, recovery, registration and settings controllers from backend
+			// following line will restrict access to profile, recovery, registration and settings controllers from backend
             'as backend' => [
                 'class' => 'dektrium\user\filters\BackendFilter',
                 'controllers' => ['profile', 'recovery', 'registration', 'settings']
-    ],
+			],
         ],
-	'shop' => [
+		'shop' => [
             'class' => 'dvizh\shop\Module',
-            'adminRoles' => ['superadmin', 'admin'],
+            'adminRoles' => ['superadmin', 'admin'],  
             //'defaultPriceType' => 1, //Цена по умолчанию]
         ],
         'filter' => [
@@ -67,31 +67,15 @@ return [
             ],
         ],
         'session' => [
-            'name' => 'BACKENDSESSID',
+            'name' => 'FRONTENDSESSID',
             'cookieParams' => [
                 'httpOnly' => true,
-                'path'     => '/admin',
+                'path'     => '/',
             ],
         ],  
-    
-//        'user' => [          
-//            'identityCookie' => [
-//                'name' => '_identity-backend',
-//                'path'     => '/admin',
-//                'httpOnly' => true],
-//        ],
-//        'session' => [
-//            // this is the name of the session cookie used for login on the backend
-//            //'name' => 'advanced-backend',
-//            'name' => 'BACKENDSESSID',
-//        'cookieParams' => [
-//            'httpOnly' => true,
-//            'path'     => '/admin',
-//            ],
-//        ],
         'log' => [
-		'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
+			'traceLevel' => YII_DEBUG ? 3 : 0,
+			'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
@@ -101,14 +85,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
 		'fileStorage' => [
             'class' => '\trntv\filekit\Storage',
             'baseUrl' => '@storageUrl/source',

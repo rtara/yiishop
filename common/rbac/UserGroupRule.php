@@ -12,7 +12,7 @@ class UserGroupRule extends Rule
 	public function execute($user, $item, $params)
     {
         if (!\Yii::$app->user->isGuest) {
-            $group = \Yii::$app->user->identity->group;
+            $group = \Yii::$app->user->group;
             if ($item->name === 'superadmin') {
 				return $group == 'superadmin';
             } elseif ($item->name === 'admin') {
@@ -25,5 +25,6 @@ class UserGroupRule extends Rule
 		}        
 		return true;
 		} 
-	}
+	} 
+}
 

@@ -164,7 +164,7 @@ use frontend\components\widgets\MyBuyButton;
                                             <li>
                                                 <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                             </li>
-                                        </ul>
+                                        </ul> 
                                     </div>
                                 </div>
                                 <h5><a href="single.html">Speakers</a></h5>

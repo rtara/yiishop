@@ -266,7 +266,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="footer">
     <div class="container">
         <div class="w3_footer_grids">
-            <div class="col-md-3 w3_footer_grid">
+            <div class="col-md-3 w3_footer_grid"> 
                 <h3>Contact</h3>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
                 <ul class="address">
