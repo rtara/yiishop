@@ -14,18 +14,18 @@ $this->title = yii::t('cart', 'Cart');
 <div class="cart container">
     <br>
     <h1><?= yii::t('cart', 'Cart'); ?></h1>
-	<div class="row">
-		<div class="col-lg-8 col-xs-8"><strong>Name</strong></div>
-		<div class="col-lg-1 col-xs-1"><strong>Price</strong></div>
-		<div class="col-lg-1 col-xs-1"><strong>Quantity</strong></div>
-		<div class="col-lg-1 col-xs-1"><strong>Total</strong></div>
-		<div class="col-lg-1 col-xs-1"><strong>Refuse</strong></div>
+	<div class="row" style="background:#C0C0C0">
+		<div class="col-lg-8 col-xs-8" style="text-align: center;"><strong>Name</strong></div>
+		<div class="col-lg-1 col-xs-1" style="text-align: center;"><strong>Price</strong></div>
+		<div class="col-lg-1 col-xs-1" style="text-align: center;"><strong>Quantity</strong></div>
+		<div class="col-lg-1 col-xs-1" style="text-align: center;"><strong>Subtotal</strong></div>
+		<div class="col-lg-1 col-xs-1" style="text-align: center;"><strong>Refuse</strong></div>
 	
 	</div>
     <?php foreach($elements as $element) { ?>
         <?php $model = Product::findOne($element->item_id);; ?>
 		
-        <div class="row">
+        <div class="row" style="border: solid 0.5px #C0C0C0">
             <div class="col-lg-8 col-xs-8">
 				<!--зображення        -->
 					<?php
@@ -36,25 +36,30 @@ $this->title = yii::t('cart', 'Cart');
                 <strong><?=$element->getModel()->getCartName();?> (<?=$element->getModel()->getCartPrice();?> р.)</strong>
                 <?=ChangeOptions::widget(['model' => $element, 'type' => 'radio']); ?>
             </div>
-			<div class="col-lg-1 col-xs-1 ">
+			<div class="col-lg-1 col-xs-1" style="padding:15px; text-align: center;">
                 <?=$element->price?>
             </div>
-            <div class="col-lg-1 col-xs-1">
+            <div class="col-lg-1 col-xs-1" style="padding:15px; text-align: center;">
                 <?=ChangeCount::widget(['model' => $element]);?>
             </div>
-            <div class="col-lg-1 col-xs-1 dvizh-cart-element-cost<?=$element->id?>">
+            <div class="col-lg-1 col-xs-1 dvizh-cart-element-cost<?=$element->id?>" style="padding:15px; text-align: center;">
                 <?=$element->count *$element->price ?>
             </div>
-			<div class="col-lg-1 col-xs-1">
+			<div class="col-lg-1 col-xs-1" style="padding:15px; text-align: center;">
                 <?=DeleteButton::widget(['model' => $element, 'lineSelector' => '.row']);?>
             </div>
         </div>
 
 
     <?php } ?>
-    <div class="total">
-        <?=CartInformer::widget(['htmlTag' => 'h3']); ?>
-    </div>
-    <br><br>
-        <?=OrderForm::widget();?>
+	<div class="row" style="background:#C0C0C0">
+		<div class="col-lg-9 col-xs-9"></div>
+		<div class="col-lg-3 col-xs-3">
+			<div class="total">
+				 <?=CartInformer::widget(['htmlTag' => 'h3']); ?>
+			</div>
+		</div>
+	</div>
+	<br><br>
+		<?=OrderForm::widget();?>
 </div>

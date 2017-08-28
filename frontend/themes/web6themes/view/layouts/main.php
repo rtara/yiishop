@@ -204,7 +204,7 @@ $this->params['breadcrumbs'][] = $this->title;
                            </div>
                            <div class="modal-footer">
                                <button class="cart-button">
-                                   <a href="/cartview">Go to cart</a>
+                                   <a href="/yiishop/frontend/web/cartview">Go to cart</a>
                                </button>
                                <?= CartInformer::widget([]); ?>
                            </div>

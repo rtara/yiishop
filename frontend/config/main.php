@@ -99,7 +99,7 @@ return [
         ],
         'cart' => [
             'class' => 'dvizh\cart\Cart',
-            'currency' => 'р.', //Валюта
+            'currency' => '.', //Валюта
             'currencyPosition' => 'after', //after или before (позиция значка валюты относительно цены)
             'priceFormat' => [2,'.', ''], //Форма цены
         ],
@@ -161,7 +161,7 @@ return [
         'order' => [
             'class' => 'dvizh\order\Module',
             'layoutPath' => 'frontend\views\layouts',
-            'successUrl' => '/page/thanks', //Страница, куда попадает пользователь после успешного заказа
+            'successUrl' => '/cartview/payment', //Страница, куда попадает пользователь после успешного заказа
             'adminNotificationEmail' => 'test@yandex.ru', //Мыло для отправки заказов
         ],
     ],
