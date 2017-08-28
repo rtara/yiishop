@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;?>
 		  <input type="hidden" name="_csrf-backend" value="<?=Yii::$app->request->getCsrfToken()?>" />
 		</form>
 	</div>
-	<? } ?>
+	<?php } ?>
 
 
 

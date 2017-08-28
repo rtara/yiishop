@@ -10,37 +10,38 @@ return [
             //'class' => 'yii\rbac\PhpManager',
             //'defaultRoles' => ['superadmin', 'admin', 'administrator', 'user', 'guest'],
        // ],
+
     ],
     'modules' => [
-//        'rbac' => 'dektrium\rbac\RbacWebModule',
-//        'user' => [
-//            'class' => 'dektrium\user\Module',
-//            'enableUnconfirmedLogin' => true,
-//            'confirmWithin' => 21600,
-//            'cost' => 12,
-//            'urlRules' => [],
-//            'urlPrefix' => 'user', 
-//            'admins' => ['kuzik'],
-//            'controllerMap' => [
-//                'admin' => [
-//                    'class' => 'dektrium\user\controllers\AdminController',
-//                    'as access' => [
-//                        'class' => 'yii\filters\AccessControl',
-//                        'rules' => [
-//                            [
-//                                'allow' => true,
-//                                'roles' => ['administrateUser'],
-//                            ],
-//                            [
-//                                'actions' => ['switch'],
-//                                'allow' => true,
-//                                'roles' => ['@'],
-//                            ],
-//                        ],
-//                    ],
-//                ],
-//            ],
-//        ],
+        'rbac' => 'dektrium\rbac\RbacWebModule',
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'urlRules' => [],
+            'urlPrefix' => 'user', 
+            'admins' => ['admin'],
+            'controllerMap' => [
+                'admin' => [
+                    'class' => 'dektrium\user\controllers\AdminController',
+                    'as access' => [
+                        'class' => 'yii\filters\AccessControl',
+                        'rules' => [
+                            [
+                                'allow' => true,
+                                'roles' => ['administrateUser'],
+                            ],
+                            [
+                                'actions' => ['switch'],
+                                'allow' => true,
+                                'roles' => ['@'],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
 
         'shop' => [
             'class' => 'dvizh\shop\Module',

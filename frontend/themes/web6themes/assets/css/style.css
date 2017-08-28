@@ -1525,14 +1525,14 @@ h3.other-nw {
 }
 /* ---------- SOCIAL ---------- */
 
-.auth-icon.social {
+.social {
 	position: relative;
     height: 3em;
     width: 13.5em;
     margin: 0 auto;
 }
 
-.auth-icon.social li {
+.social li {
 	display: block;
     height: 3em;
     line-height: 3em;
@@ -1551,7 +1551,7 @@ h3.other-nw {
     text-align: center;
     width: 3em;
 }
-.auth-icon.social a {
+.social a {
 	color: #fffdf0;
     display: block;
     height: 3em;

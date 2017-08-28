@@ -12,7 +12,14 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
-		'shop' => [
+        'user' => [
+        // following line will restrict access to profile, recovery, registration and settings controllers from backend
+            'as backend' => [
+                'class' => 'dektrium\user\filters\BackendFilter',
+                'controllers' => ['profile', 'recovery', 'registration', 'settings']
+    ],
+        ],
+	'shop' => [
             'class' => 'dvizh\shop\Module',
             'adminRoles' => ['superadmin', 'admin'],
             //'defaultPriceType' => 1, //Цена по умолчанию]
@@ -51,24 +58,37 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
+        
         'user' => [
-            
-            'as backend' => 'dektrium\user\filters\BackendFilter',
-            
             'identityCookie' => [
-                'name' => '_identity-backend',
+                'name'     => '_backendIdentity',
                 'path'     => '/admin',
-                'httpOnly' => true],
-        ],
-        'session' => [
-            // this is the name of the session cookie used for login on the backend
-            //'name' => 'advanced-backend',
-            'name' => 'BACKENDSESSID',
-        'cookieParams' => [
-            'httpOnly' => true,
-            'path'     => '/admin',
+                'httpOnly' => true,
             ],
         ],
+        'session' => [
+            'name' => 'BACKENDSESSID',
+            'cookieParams' => [
+                'httpOnly' => true,
+                'path'     => '/admin',
+            ],
+        ],  
+    
+//        'user' => [          
+//            'identityCookie' => [
+//                'name' => '_identity-backend',
+//                'path'     => '/admin',
+//                'httpOnly' => true],
+//        ],
+//        'session' => [
+//            // this is the name of the session cookie used for login on the backend
+//            //'name' => 'advanced-backend',
+//            'name' => 'BACKENDSESSID',
+//        'cookieParams' => [
+//            'httpOnly' => true,
+//            'path'     => '/admin',
+//            ],
+//        ],
         'log' => [
 		'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -97,10 +117,10 @@ return [
                 return new League\Flysystem\Filesystem($adapter);
             },
         ],
-		'authManager' => [
-			'class' => 'yii\rbac\PhpManager',
-			'defaultRoles' => ['admin', 'superadmin','administrator','user'], // your define roles
-		], 
+//		'authManager' => [
+//			'class' => 'yii\rbac\PhpManager',
+//			'defaultRoles' => ['admin', 'superadmin','administrator','user'], // your define roles
+//		], 
     ],
     'params' => $params,
 ];

@@ -14,28 +14,27 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'authClientCollection' => [
-        'class' => yii\authclient\Collection::className(),
+            'class' => yii\authclient\Collection::className(),       
         
-        
-        'clients' => [
-            'facebook' => [
-                'class'        => 'dektrium\user\clients\Facebook',
-                'clientId'     => '1519297754799896',
-                'clientSecret' => '38d3125c81ea4e6e780cb93e6ceb4595',
+            'clients' => [
+                'facebook' => [
+                    'class'        => 'dektrium\user\clients\Facebook',
+                    'clientId'     => '1519297754799896',
+                    'clientSecret' => '38d3125c81ea4e6e780cb93e6ceb4595',
+                ],
+            'twitter' => [
+                'class'          => 'dektrium\user\clients\Twitter',
+                'consumerKey'    => 'CONSUMER_KEY',
+                'consumerSecret' => 'CONSUMER_SECRET',
             ],
-        'twitter' => [
-            'class'          => 'dektrium\user\clients\Twitter',
-            'consumerKey'    => 'CONSUMER_KEY',
-            'consumerSecret' => 'CONSUMER_SECRET',
-        ],
-        'google' => [
-            'class'        => 'dektrium\user\clients\Google',
-            'clientId'     => 'CLIENT_ID',
-            'clientSecret' => 'CLIENT_SECRET',
+            'google' => [
+                'class'        => 'dektrium\user\clients\Google',
+                'clientId'     => 'CLIENT_ID',
+                'clientSecret' => 'CLIENT_SECRET',
+            ],
         ],
     ],
-],
-	    'cache' => [
+	'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'request' => [
@@ -43,23 +42,19 @@ return [
 			'class' => 'frontend\components\LangRequest'
         ],
         'user' => [
-            
-            'as frontend' => 'dektrium\user\filters\FrontendFilter',
-            
             'identityCookie' => [
-                'name' => '_identity-frontend',
+                'name'     => '_frontendIdentity',
                 'path'     => '/',
-                'httpOnly' => true],
-        ],
-        'session' => [
-            // this is the name of the session cookie used for login on the frontend
-            //'name' => 'advanced-frontend',
-            'name' => 'FRONTENDSESSID',
-        'cookieParams' => [
-            'httpOnly' => true,
-            'path'     => '/',
+                'httpOnly' => true,
             ],
         ],
+        'session' => [
+            'name' => 'FRONTENDSESSID',
+            'cookieParams' => [
+                'httpOnly' => true,
+                'path'     => '/',
+            ],
+        ],  
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -109,19 +104,24 @@ return [
             'priceFormat' => [2,'.', ''], //Форма цены
         ],
     ],
-    'modules' => [
-        
-        'rbac' => 'dektrium\rbac\RbacWebModule',
-        
+    'modules' => [       
         'user' => [
-            'class' => 'dektrium\user\Module',
+            // following line will restrict access to admin controller from frontend application
+            'as frontend' => 'dektrium\user\filters\FrontendFilter',
+        ],
+
+        
+//        'rbac' => 'dektrium\rbac\RbacWebModule',
+        
+//        'user' => [
+//            'class' => 'dektrium\user\Module',
 //            'enableUnconfirmedLogin' => true,
 //            'confirmWithin' => 21600,
 //            'cost' => 12,
 //            'urlRules' => [],
 //            'urlPrefix' => 'user',
-            'adminPermission' => true,
-            'admins' => ['kuzik'],
+//            'adminPermission' => true,
+//            'admins' => ['kuzik'],
 //            'controllerMap' => [
 //                'admin' => [
 //                    'class' => 'dektrium\user\controllers\AdminController',
@@ -141,7 +141,7 @@ return [
 //                    ],
 //                ],
 //            ],
-        ],
+//        ],
 //        
 //        'user' => [
 //                    'class' => 'dektrium\user\Module',
@@ -150,7 +150,7 @@ return [
 //                    'cost' => 12,
 //                    'urlRules' => ['user'],
 //                    'urlPrefix' => user,
-//                    'admins' => ['admin'],
+//                    'admins' => ['kuzik'],
 //                    'adminPermission' => 'administrateUser'
 //         ],
         'cart' => [
